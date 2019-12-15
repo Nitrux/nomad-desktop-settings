@@ -1,3 +1,9 @@
+nx-desktop-settings (1.4.68)  nxos; urgency=medium
+
+  * Update package.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sun, 15 Dec 2019 00:36:00 -0500
+
 nx-desktop-settings (1.4.67)  nxos; urgency=medium
 
   * Update LO config.
