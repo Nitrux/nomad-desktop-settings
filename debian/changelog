@@ -1,3 +1,9 @@
+nx-desktop-settings (1.4.85)  nxos; urgency=medium
+
+  * Update app menu groups.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 27 mar 2020 00:15:00 -0500
+
 nx-desktop-settings (1.4.84)  nxos; urgency=medium
 
   * Update app menu groups.

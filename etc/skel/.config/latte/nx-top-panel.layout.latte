@@ -52,21 +52,21 @@ immutability=1
 plugin=org.nx.networkmanagement
 
 [Containments][12][Applets][61][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][12][Applets][64]
 immutability=1
 plugin=org.nx.audio
 
 [Containments][12][Applets][64][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][12][Applets][65]
 immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][12][Applets][65][Configuration]
-PreloadWeight=10
+PreloadWeight=0
 
 [Containments][12][ConfigDialog]
 DialogHeight=703
@@ -93,7 +93,7 @@ raiseOnActivityChange=false
 raiseOnDesktopChange=false
 settingsComplexity=4
 timerHide=700
-timerShow=200
+timerShow=0
 viewType=0
 visibility=4
 wallpaperplugin=org.kde.image
@@ -106,10 +106,11 @@ plugin=org.kde.latte.plasmoid
 PreloadWeight=0
 
 [Containments][13][Applets][47][Configuration][General]
+isInLatteDock=true
 launchers59=applications:org.kde.index.desktop,applications:appimagekit_55c0dc399eba757450aa5f7b72f28194-Waterfox_Classic.desktop,applications:org.kde.nota.desktop,applications:systemsettings.desktop,applications:org.kde.station.desktop
 
 [Containments][13][ConfigDialog]
-DialogHeight=612
+DialogHeight=604
 DialogWidth=509
 
 [Containments][13][Configuration]
@@ -119,18 +120,21 @@ PreloadWeight=0
 advanced=true
 appletOrder=47
 durationTime=x3
+fittsLawIsRequested=true
 hoverAction=PreviewWindows
 iconSize=48
 indicateAudioStreams=false
 infoBadgeProminentColorEnabled=true
-panelShadows=false
-panelSize=25
-panelTransparency=65
+lengthExtMargin=4
+panelSize=100
+panelTransparency=0
+screenEdgeMargin=12
 shadows=None
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=true
 showWindowActions=true
-shrinkThickMargins=true
+taskScrollAction=ScrollNone
+thickMargin=0
 threeColorsWindows=true
 zoomLevel=0
 
@@ -226,10 +230,10 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][14][Applets][54][Configuration][General]
-favoriteApps=systemsettings.desktop,nx-welcome-wizard.desktop,appimagekit_55c0dc399eba757450aa5f7b72f28194-Waterfox_Classic.desktop
+favoriteApps=systemsettings.desktop,nx-welcome-wizard.desktop
 
 [Containments][14][Applets][54][Configuration][Groups]
-groupsJson=[\n    {\n        "apps": [\n            "org.kde.contacts.desktop",\n            "org.kde.station.desktop",\n            "org.kde.pix.desktop",\n            "org.kde.nota.desktop",\n            "org.kde.buho.desktop",\n            "org.kde.index.desktop",\n            "org.kde.vvave.desktop"\n        ],\n        "id": "ied5ss8n",\n        "name": "Maui Apps"\n    },\n    {\n        "apps": [\n            "org.kde.spectacle.desktop",\n            "org.kde.ksysguard.desktop",\n            "org.kde.kcalc.desktop",\n            "org.kde.ark.desktop",\n            "org.kde.latte-dock.desktop",\n            "systemsettings.desktop"\n        ],\n        "id": "p7x5ss8n",\n        "name": "KDE Apps"\n    },\n    {\n        "apps": [\n            "qpdfview.desktop",\n            "kvantummanager.desktop"\n        ],\n        "id": "8ut6ss8n",\n        "name": "Qt Apps"\n    },\n    {\n        "apps": [\n            "nx-welcome-wizard.desktop",\n            "vmetal.desktop",\n            "znx-gui.desktop"\n        ],\n        "id": "zqf7ss8n",\n        "name": "Utilities"\n    },\n    {\n        "apps": [\n            "appimagekit_768c96241c27223acd4921b4c50f73b3-Kdenlive.desktop",\n            "appimagekit_5dcdf8402b3a97e2f3d68c75d0854eef-LibreOffice.desktop",\n            "appimagekit_57631c3d43d98e6a16843d8301a1a60e-Wine.desktop",\n            "appimagekit_2b2442f621c795a89dc669b7b4b36fbc-AppImageUpdate.desktop",\n            "appimagekit_e00131cdaf6606b58dc63e02f6f9667a-appimage-cli-tool.desktop",\n            "appimagekit_55c0dc399eba757450aa5f7b72f28194-Waterfox_Classic.desktop",\n            "appimagekit_5612131013151765469c1649c3345f79-mpv_Media_Player.desktop",\n            "appimagekit_4bd6a6c147ac3496962812f375515a4b-Inkscape.desktop",\n            "appimagekit_725d7e5e03232cfa1b1c16ec5fddacf1-LMMS.desktop",\n            "appimagekit_279ef495fdbe622b09f8a910c78c16b4-GNU_Image_Manipulation_Program.desktop"\n        ],\n        "id": "l2aghc8n",\n        "name": "AppImages"\n    },\n    {\n        "apps": [\n            "install.itch.io.desktop"\n        ],\n        "id": "7hltipjm",\n        "name": "Bundled Apps"\n    }\n]\n
+groupsJson=[\n    {\n        "apps": [\n            "org.kde.contacts.desktop",\n            "org.kde.station.desktop",\n            "org.kde.pix.desktop",\n            "org.kde.nota.desktop",\n            "org.kde.buho.desktop",\n            "org.kde.index.desktop",\n            "org.kde.vvave.desktop"\n        ],\n        "id": "ied5ss8n",\n        "name": "Maui Apps"\n    },\n    {\n        "apps": [\n            "org.kde.spectacle.desktop",\n            "org.kde.kcalc.desktop",\n            "org.kde.ark.desktop",\n            "org.kde.latte-dock.desktop",\n            "systemsettings.desktop"\n        ],\n        "id": "p7x5ss8n",\n        "name": "KDE Apps"\n    },\n    {\n        "apps": [\n            "qpdfview.desktop",\n            "kvantummanager.desktop"\n        ],\n        "id": "8ut6ss8n",\n        "name": "Qt Apps"\n    },\n    {\n        "apps": [\n            "nx-welcome-wizard.desktop",\n            "vmetal.desktop",\n            "znx-gui.desktop"\n        ],\n        "id": "zqf7ss8n",\n        "name": "Utilities"\n    },\n    {\n        "apps": [\n            "appimagekit_82f7a11ea893c8b2fde2187623a5ba1d-mpv_Media_Player.desktop",\n            "appimagekit_768c96241c27223acd4921b4c50f73b3-Kdenlive.desktop",\n            "appimagekit_5dcdf8402b3a97e2f3d68c75d0854eef-LibreOffice.desktop",\n            "appimagekit_57631c3d43d98e6a16843d8301a1a60e-Wine.desktop",\n            "appimagekit_2b2442f621c795a89dc669b7b4b36fbc-AppImageUpdate.desktop",\n            "appimagekit_e00131cdaf6606b58dc63e02f6f9667a-appimage-cli-tool.desktop",\n            "appimagekit_55c0dc399eba757450aa5f7b72f28194-Waterfox_Classic.desktop",\n            "appimagekit_4bd6a6c147ac3496962812f375515a4b-Inkscape.desktop",\n            "appimagekit_725d7e5e03232cfa1b1c16ec5fddacf1-LMMS.desktop"\n        ],\n        "id": "l2aghc8n",\n        "name": "AppImages"\n    },\n    {\n        "apps": [\n            "install.itch.io.desktop"\n        ],\n        "id": "7hltipjm",\n        "name": "Bundled Apps"\n    }\n]\n
 
 [Containments][14][Applets][54][Shortcuts]
 global=Meta+Alt+L
@@ -257,7 +261,7 @@ immutability=1
 plugin=org.nx.clock
 
 [Containments][14][Applets][60][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][14][Applets][60][Configuration][Appearance]
 fontFamily=Homenaje
@@ -308,9 +312,12 @@ reversed=true
 [LayoutSettings]
 activities=
 background=
+backgroundStyle=0
 color=red
+customBackground=
+customTextColor=fcfcfc
 disableBordersForMaximizedWindows=false
-lastUsedActivity=40f0c979-0710-4ff6-8097-cdf00a33c78e
+lastUsedActivity=d620f10f-cbbc-495f-b724-877d729564b3
 launchers=
 preferredForShortcutsTouched=false
 showInMenu=true
