@@ -1,4 +1,10 @@
-nx-desktop-settings (1.4.91)  nxos; urgency=medium
+nx-desktop-settings (1.4.93)  nxos; urgency=medium
+
+  * Update package.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 06 May 2020 23:05:00 -0500
+
+nx-desktop-settings (1.4.92)  nxos; urgency=medium
 
   * Update package with default settings for Nitrux.
 
