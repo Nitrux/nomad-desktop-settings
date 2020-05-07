@@ -2,9 +2,6 @@
 
 echo QT_STYLE_OVERRIDE=kvantum >> /etc/environment 
 
-echo -e "XDG_CONFIG_DIRS=/etc/xdg" > /etc/environment
-echo -e "XDG_DATA_DIRS=/usr/local/share:/usr/share" > /etc/environment
-
 echo -e "PATH=$PATH:/Applications\n" > /etc/environment
 sed -i "s|secure_path\=.*$|secure_path=\"$PATH:/Applications\"|g" /etc/sudoers
 sed -i "/env_reset/d" /etc/sudoers

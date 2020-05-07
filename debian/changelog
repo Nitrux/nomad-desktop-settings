@@ -1,3 +1,9 @@
+nx-desktop-settings (1.4.96)  nitrux; urgency=medium
+
+  * Remove postinst commands.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 07 May 2020 02:32:00 -0500
+
 nx-desktop-settings (1.4.95)  nitrux; urgency=medium
 
   * Remove conflicting file.
