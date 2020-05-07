@@ -98,3 +98,5 @@ mkdir -p /usr/lib/zsh/5.8/zsh/
 ln -sv /home/.pnx/usr/lib/zsh/5.8/zsh/datetime.so /usr/lib/zsh/5.8/zsh/datetime.so
 
 npm install npm@latest -g
+
+sed -i "/NoDisplay=true/d" /usr/share/applications/org.kde.kinfocenter.desktop
