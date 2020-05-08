@@ -1,3 +1,9 @@
+nx-desktop-settings (1.5.3)  nitrux; urgency=medium
+
+  * Update package.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 08 May 2020 05:03:00 -0500
+
 nx-desktop-settings (1.5.2)  nitrux; urgency=medium
 
   * Update package.
