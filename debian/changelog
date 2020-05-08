@@ -1,3 +1,9 @@
+nx-desktop-settings (1.4.99)  nitrux; urgency=medium
+
+  * Use axel instead of wget, download wexond.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 07 May 2020 23:49:00 -0500
+
 nx-desktop-settings (1.4.98.1)  nitrux; urgency=medium
 
   * Update app menu groups
