@@ -45,11 +45,11 @@ https://github.com/LMMS/lmms/releases/download/v1.2.1/lmms-1.2.1-linux-x86_64.Ap
 '
 
 for x in $APPS_SYS; do
-	axel -a -o /Applications $x
+	axel -a -q -o /Applications $x
 done
 
 for x in $APPS_USR; do
-	axel -a -o /Applications $x
+	axel -a -q -o /Applications $x
 done
 
 chmod +x /Applications/*
