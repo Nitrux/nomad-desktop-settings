@@ -97,3 +97,21 @@ ln -sv /home/.pnx/usr/lib/zsh/5.8/zsh/datetime.so /usr/lib/zsh/5.8/zsh/datetime.
 npm install npm@latest -g
 
 sed -i "/NoDisplay=true/d" /usr/share/applications/org.kde.kinfocenter.desktop
+
+KWIN_SCRIPTS='
+https://github.com/esjeon/krohnkite/releases/download/v0.7/krohnkite-0.7.kwinscript
+https://raw.githubusercontent.com/UriHerrera/storage/master/Files/Parachute.kwinscript
+'
+
+mkdir -p /tmp/kwin_scripts
+
+for x in $APPS_SYS; do
+	wget -q -P /tmp/kwin_scripts $x
+done
+
+plasmapkg2 -t kwinscript -i /tmp/kwin_scripts/krohnkite-0.7.kwinscript
+plasmapkg2 -t kwinscript -i /tmp/kwin_scripts/Parachute.kwinscript
+
+rm -r /tmp/kwin_scripts
+
+ln -sv /usr/share/kwin/scripts/krohnkite/metadata.desktop /usr/share/kservices5/krohnkite.desktop/
