@@ -14,11 +14,6 @@ ln -sv /usr/games/nsnake /usr/bin/nsnake
 
 git clone https://github.com/robbyrussell/oh-my-zsh.git /etc/skel/.oh-my-zsh
 
-rm /bin/sh.distrib
-/usr/bin/dpkg --remove --no-triggers --force-remove-essential --force-bad-path dash
-ln -svf /bin/mksh /bin/sh
-/usr/bin/dpkg --remove --no-triggers --force-remove-essential --force-bad-path dash
-
 sed -i 's+SHELL=/bin/sh+SHELL=/bin/zsh+g' /etc/default/useradd
 sed -i 's+DSHELL=/bin/bash+DSHELL=/bin/zsh+g' /etc/adduser.conf
 
@@ -106,7 +101,7 @@ https://raw.githubusercontent.com/UriHerrera/storage/master/Files/Parachute.kwin
 mkdir -p /tmp/kwin_scripts
 
 for x in $APPS_SYS; do
-	axel -a -o /tmp/kwin_scripts $x
+	axel -a -q -o /tmp/kwin_scripts $x
 done
 
 plasmapkg2 -t kwinscript -i /tmp/kwin_scripts/krohnkite-0.7.kwinscript
@@ -115,3 +110,8 @@ plasmapkg2 -t kwinscript -i /tmp/kwin_scripts/Parachute.kwinscript
 rm -r /tmp/kwin_scripts
 
 ln -sv /usr/share/kwin/scripts/krohnkite/metadata.desktop /usr/share/kservices5/krohnkite.desktop
+
+rm /bin/sh.distrib
+/usr/bin/dpkg --remove --no-triggers --force-remove-essential --force-bad-path dash
+ln -svf /bin/mksh /bin/sh
+/usr/bin/dpkg --remove --no-triggers --force-remove-essential --force-bad-path dash
