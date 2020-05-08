@@ -19,13 +19,21 @@ NoiseStrength=8
 TabBox=false
 TabBoxAlternative=false
 
+[Desktops]
+Id_1=f96d4d9c-ba6c-4040-81e8-7b7c9e84db0d
+Id_2=4414a07d-d6ab-4f67-bab5-19a9c3849baf
+Id_3=3defe8cb-112e-47c2-8e79-afd7504dbe71
+Id_4=dd101948-4295-4fc6-88ab-e1345f3081b0
+Number=4
+Rows=1
+
 [Effect-Cube]
-TouchBorderActivate=9
-TouchBorderActivateCylinder=9
-TouchBorderActivateSphere=9
+BorderActivate=9
+BorderActivateCylinder=9
+BorderActivateSphere=9
 
 [Effect-DesktopGrid]
-TouchBorderActivate=9
+BorderActivate=9
 
 [Effect-FlipSwitch]
 TabBox=false
@@ -33,9 +41,11 @@ TabBoxAlternative=false
 
 [Effect-PresentWindows]
 LayoutMode=1
-BorderActivateAll=3
-TouchBorderActivate=7
-TouchBorderActivateAll=9
+BorderActivate=9
+BorderActivateAll=9
+BorderActivateClass=9
+TouchBorderActivate=9
+TouchBorderActivateAll=7
 TouchBorderActivateClass=9
 
 [MouseBindings]
@@ -66,7 +76,18 @@ Top=None
 TopLeft=None
 TopRight=None
 
+[NightColor]
+Active=true
+LatitudeAuto=19.3837
+LongitudeAuto=-99.1757
+NightTemperature=5000
+
 [Plugins]
+ParachuteEnabled=true
+krohnkiteEnabled=false
+minimizeallEnabled=false
+synchronizeskipswitcherEnabled=false
+videowallEnabled=false
 desktopgridEnabled=false
 diminactiveEnabled=true
 glideEnabled=true
@@ -97,7 +118,7 @@ MultiScreenMode=0
 ShowDesktopMode=0
 ShowTabBox=true
 SwitchingMode=0
-TouchBorderActivate=6
+TouchBorderActivate=9
 TouchBorderAlternativeActivate=9
 
 [TabBoxAlternative]
@@ -113,10 +134,10 @@ ShowTabBox=true
 SwitchingMode=0
 
 [TouchEdges]
-Bottom=ApplicationLauncher
+Bottom=None
 Left=None
-Right=ShowDesktop
-Top=KRunner
+Right=None
+Top=None
 
 [Windows]
 ActiveMouseScreen=false
@@ -140,7 +161,7 @@ MaximizeButtonLeftClickCommand=Maximize
 MaximizeButtonMiddleClickCommand=Maximize (vertical only)
 MaximizeButtonRightClickCommand=Maximize (horizontal only)
 NextFocusPrefersMouse=false
-Placement=Random
+Placement=Centered
 SeparateScreenFocus=false
 ShadeHover=false
 ShadeHoverInterval=250
