@@ -95,7 +95,7 @@ https://raw.githubusercontent.com/UriHerrera/storage/master/Files/Parachute.kwin
 
 mkdir -p /tmp/kwin_scripts
 
-for x in $APPS_SYS; do
+for x in $KWIN_SCRIPTS; do
 	axel -a -q -o /tmp/kwin_scripts $x
 done
 
