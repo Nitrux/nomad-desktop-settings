@@ -54,8 +54,6 @@ mv /Applications/pnx-*-x86_64.AppImage /Applications/pnx
 mv /Applications/vmetal-free-amd64 /Applications/vmetal
 mv /Applications/proton-*-x86_64.AppImage /Applications/wine
 
-ln -sv /Applications/wine /Applications/wineserver
-
 mv /Applications/appimaged-x86_64.AppImage /etc/skel/.local/bin/appimaged
 
 mv /Applications/LibreOffice-*-x86_64.AppImage /Applications/libreoffice
