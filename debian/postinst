@@ -18,13 +18,13 @@ mkdir -p /Applications
 mkdir -p /var/lib/pacman/
 
 APPS_SYS='
-https://raw.githubusercontent.com/UriHerrera/storage/master/AppImages/znx-master-x86_64.AppImage
+https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/znx-master-x86_64.AppImage
+https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/appimage-installer-x86_64.AppImage
+https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/pnx-1.0.0-x86_64.AppImage
+https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/VMetal-x86_64.AppImage
 https://github.com/Nitrux/znx-gui/releases/download/continuous-stable/znx-gui_master-x86_64.AppImage
-https://raw.githubusercontent.com/UriHerrera/storage/master/AppImages/appimage-cli-tool-x86_64.AppImage
-https://raw.githubusercontent.com/UriHerrera/storage/master/AppImages/pnx-1.0.0-x86_64.AppImage
-https://raw.githubusercontent.com/UriHerrera/storage/master/Binaries/vmetal-free-amd64
-https://github.com/ferion11/Proton_Appimage/releases/download/continuous/proton-linux-x86-v4.2-PlayOnLinux-x86_64.AppImage
 https://github.com/AppImage/appimaged/releases/download/continuous/appimaged-x86_64.AppImage
+https://github.com/ferion11/Proton_Appimage/releases/download/continuous/proton-linux-x86-v4.2-PlayOnLinux-x86_64.AppImage
 '
 
 APPS_USR='
@@ -32,7 +32,7 @@ https://files.kde.org/kdenlive/release/kdenlive-20.04.0-x86_64.appimage
 https://libreoffice.soluzioniopen.com/stable/fresh/LibreOffice-fresh.basic-x86_64.AppImage
 https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-classic-latest-x86_64.AppImage
 https://github.com/aferrero2707/gimp-appimage/releases/download/continuous/GIMP_AppImage-git-2.10.19-20200430-x86_64.AppImage
-https://raw.githubusercontent.com/UriHerrera/storage/master/AppImages/mpv-0.30.0-x86_64.AppImage
+https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/mpv-0.30.0-x86_64.AppImage
 https://media.inkscape.org/dl/resources/file/Inkscape-4035a4f-x86_64.AppImage
 https://github.com/LMMS/lmms/releases/download/v1.2.1/lmms-1.2.1-linux-x86_64.AppImage
 '
@@ -49,9 +49,9 @@ chmod +x /Applications/*
 
 mv /Applications/znx-master-x86_64.AppImage /Applications/znx
 mv /Applications/znx-gui_*-x86_64.AppImage /Applications/znx-gui
-mv /Applications/appimage-cli-tool-x86_64.AppImage /Applications/app
+mv /Applications/appimage-*-x86_64.AppImage /Applications/app
 mv /Applications/pnx-*-x86_64.AppImage /Applications/pnx
-mv /Applications/vmetal-free-amd64 /Applications/vmetal
+mv /Applications/VMetal-x86_64.AppImage /Applications/vmetal
 mv /Applications/proton-*-x86_64.AppImage /Applications/wine
 
 mv /Applications/appimaged-x86_64.AppImage /etc/skel/.local/bin/appimaged
