@@ -1,5 +1,11 @@
 nx-desktop-settings (1.6.0)  nitrux; urgency=medium
 
+  * Make GTK apps use breeze-dark icons.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 13 May 2020 08:17:00 -0500
+
+nx-desktop-settings (1.6.0)  nitrux; urgency=medium
+
   * Fix wrong cursor on window decorations.
 
  -- Uri Herrera <uri_herrera@nxos.org>  Wed, 13 May 2020 03:52:00 -0500

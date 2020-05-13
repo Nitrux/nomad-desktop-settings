@@ -61,9 +61,9 @@ style "user-font"
 widget_class "*" style "user-font"
 gtk-font-name="Chivo [    ] Regular 10"
 gtk-theme-name="nitrux-dark"
-gtk-icon-theme-name="Luv"
-gtk-fallback-icon-theme="breeze"
-gtk-cursor-theme-name="nitrux_cursors"
+gtk-icon-theme-name="breeze-dark"
+gtk-fallback-icon-theme="breeze-dark"
+gtk-cursor-theme-name="nitrux_snow_cursors"
 gtk-toolbar-style=GTK_TOOLBAR_ICONS
 gtk-menu-images=1
 gtk-button-images=1
