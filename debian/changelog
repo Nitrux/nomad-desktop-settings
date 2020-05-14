@@ -1,4 +1,4 @@
-nx-desktop-settings (1.6.0)  nitrux; urgency=medium
+nx-desktop-settings (1.6.1)  nitrux; urgency=medium
 
   * Make GTK apps use breeze-dark icons.
 
