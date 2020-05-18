@@ -95,6 +95,3 @@ ln -svf /bin/mksh /bin/sh
 
 sed -i 's+SHELL=/bin/sh+SHELL=/bin/zsh+g' /etc/default/useradd
 sed -i 's+DSHELL=/bin/bash+DSHELL=/bin/zsh+g' /etc/adduser.conf
-
-update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/nitrux_snow_cursors/index.theme 91
-

@@ -1,3 +1,9 @@
+nx-desktop-settings (1.6.3)  nitrux; urgency=medium
+
+  * Update package.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 18 May 2020 03:33:00 -0500
+
 nx-desktop-settings (1.6.2)  nitrux; urgency=medium
 
   * Force cursor theme.
