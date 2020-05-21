@@ -22,7 +22,6 @@ https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/znx-master-x86
 https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/appimage-installer-x86_64.AppImage
 https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/pnx-1.0.0-x86_64.AppImage
 https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/VMetal-x86_64.AppImage
-https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/znx-gui_master-x86_64.AppImage
 https://github.com/AppImage/appimaged/releases/download/continuous/appimaged-x86_64.AppImage
 https://github.com/ferion11/Proton_Appimage/releases/download/continuous/proton-linux-x86-v4.2-PlayOnLinux-x86_64.AppImage
 '
@@ -48,7 +47,6 @@ done
 chmod +x /Applications/*
 
 mv /Applications/znx-master-x86_64.AppImage /Applications/znx
-mv /Applications/znx-gui_*-x86_64.AppImage /Applications/znx-gui
 mv /Applications/appimage-*-x86_64.AppImage /Applications/app
 mv /Applications/pnx-*-x86_64.AppImage /Applications/pnx
 mv /Applications/VMetal-x86_64.AppImage /Applications/vmetal
