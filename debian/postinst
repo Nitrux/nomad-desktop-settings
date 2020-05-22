@@ -30,7 +30,7 @@ https://github.com/ferion11/Proton_Appimage/releases/download/continuous/proton-
 APPS_USR='
 https://files.kde.org/kdenlive/release/kdenlive-20.04.0-x86_64.appimage
 https://libreoffice.soluzioniopen.com/stable/fresh/LibreOffice-fresh.basic-x86_64.AppImage
-https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-classic-latest-x86_64.AppImage
+https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-current-latest-x86_64.AppImage
 https://github.com/aferrero2707/gimp-appimage/releases/download/continuous/GIMP_AppImage-git-2.10.19-20200430-x86_64.AppImage
 https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/mpv-0.30.0-x86_64.AppImage
 https://media.inkscape.org/dl/resources/file/Inkscape-4035a4f-x86_64.AppImage
