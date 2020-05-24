@@ -1,3 +1,9 @@
+nx-desktop-settings (1.7.1)  nitrux; urgency=medium
+
+  * Update posinst.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sun, 24 May 2020 04:44:00 -0500
+
 nx-desktop-settings (1.7.0)  nitrux; urgency=medium
 
   * Update url.
