@@ -30,9 +30,9 @@ https://github.com/ferion11/Proton_Appimage/releases/download/continuous/proton-
 APPS_USR='
 https://files.kde.org/kdenlive/release/kdenlive-20.04.0-x86_64.appimage
 https://libreoffice.soluzioniopen.com/stable/fresh/LibreOffice-fresh.basic-x86_64.AppImage
-https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-current-latest-x86_64.AppImage
 https://github.com/aferrero2707/gimp-appimage/releases/download/continuous/GIMP_AppImage-git-2.10.19-20200430-x86_64.AppImage
-https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/mpv-0.30.0-x86_64.AppImage
+https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/Waterfox_Current-x86_64.AppImage
+https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/mpv-0.32.0-x86_64.AppImage
 https://media.inkscape.org/dl/resources/file/Inkscape-4035a4f-x86_64.AppImage
 https://github.com/LMMS/lmms/releases/download/v1.2.1/lmms-1.2.1-linux-x86_64.AppImage
 '
@@ -48,7 +48,7 @@ done
 chmod +x /Applications/*
 
 mv /Applications/znx-master-x86_64.AppImage /Applications/znx
-mv /Applications/appimage-*-x86_64.AppImage /Applications/app
+mv /Applications/appimage-installer-x86_64.AppImage /Applications/app
 mv /Applications/pnx-*-x86_64.AppImage /Applications/pnx
 mv /Applications/VMetal-x86_64.AppImage /Applications/vmetal
 mv /Applications/proton-*-x86_64.AppImage /Applications/wine
@@ -95,3 +95,5 @@ ln -svf /bin/mksh /bin/sh
 
 sed -i 's+SHELL=/bin/sh+SHELL=/bin/zsh+g' /etc/default/useradd
 sed -i 's+DSHELL=/bin/bash+DSHELL=/bin/zsh+g' /etc/adduser.conf
+
+ln -sv /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-13.99.so /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-11.1.so
