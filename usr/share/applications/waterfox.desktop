@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Waterfox
+GenericName=Web browser
+Comment=Ethical web-browser.
+Icon=waterfox
+Type=Application
+Terminal=false
+Exec=waterfox
+TryExec=waterfox
+Categories=Utility;Web;Web Browser;Browser
+Keywords=web;browser;waterfox
