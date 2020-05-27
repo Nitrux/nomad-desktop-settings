@@ -1,3 +1,9 @@
+nx-desktop-settings (1.7.7)  nitrux; urgency=medium
+
+  * Change default layout.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 27 May 2020 14:59:00 -0500
+
 nx-desktop-settings (1.7.6)  nitrux; urgency=medium
 
   * Update layouts.
