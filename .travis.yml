@@ -22,7 +22,7 @@ deploy:
   script: "./source/nitrux-repository-util.sh *.deb"
   skip_cleanup: true
   on:
-    branch: legacy
+    branch: minimal
 notifications:
   email: false
   slack:
