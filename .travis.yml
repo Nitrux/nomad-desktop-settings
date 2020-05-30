@@ -16,10 +16,13 @@ branches:
   only:
   - master
   - development
+  - minimal
 deploy:
 - provider: script
-  script: ./source/nitrux-repository-util.sh *.deb
+  script: "./source/nitrux-repository-util.sh *.deb"
   skip_cleanup: true
+  on:
+    branch: legacy
 notifications:
   email: false
   slack:
