@@ -1,3 +1,9 @@
+nx-desktop-settings-minimal (0.0.4)  nitrux; urgency=medium
+
+  * Adjust size of powerline console fonts.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sat, 30 May 2020 23:08:00 -0500
+ 
 nx-desktop-settings-minimal (0.0.3)  nitrux; urgency=medium
 
   * Add powerline console fonts.

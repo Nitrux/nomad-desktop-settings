@@ -92,4 +92,5 @@ rm /etc/default/console-setup && touch /etc/default/console-setup
 	'CHARMAP="UTF-8"' \
 	" " \
 	"VIDEOMODE=" \
-	'FONT="ter-powerline-v32b.psf.gz"' \
+	'FONT="ter-powerline-v16n.psf.gz"' \
+	
