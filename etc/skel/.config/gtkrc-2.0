@@ -1,4 +1,4 @@
-# created by KDE Plasma, Thu May 28 19:01:26 2020
+# created by KDE Plasma, Sun May 31 18:15:33 2020
 #
 
 gtk-alternative-button-order = 1
@@ -52,20 +52,3 @@ style "MenuItem"
 
 class "*MenuItem" style "MenuItem"
 
-include "/usr/share/themes/nitrux-dark/gtk-2.0/gtkrc"
-
-style "user-font" 
-{
-	font_name="Chivo [    ] Regular"
-}
-
-widget_class "*" style "user-font"
-gtk-font-name="Chivo [    ] Regular 10"
-gtk-theme-name="nitrux-dark"
-gtk-icon-theme-name="breeze-dark"
-gtk-fallback-icon-theme="breeze-dark"
-gtk-cursor-theme-name="nitrux_snow_cursors"
-gtk-toolbar-style=GTK_TOOLBAR_ICONS
-gtk-menu-images=1
-gtk-button-images=1
-gtk-primary-button-warps-slider=0
