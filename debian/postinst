@@ -81,3 +81,15 @@ git clone https://github.com/powerline/fonts /tmp/powerline-fonts
 cp -r /tmp/powerline-fonts/Terminus/PSF/*.psf.gz /usr/share/consolefonts
 rm -r /tmp/powerline-fonts
 
+rm /etc/default/console-setup && touch /etc/default/console-setup
+
+>> /etc/default/console-setup printf "%s\n" \
+	"+# CONFIGURATION FILE FOR SETUPCON" \
+	" " \
+	"# Consult the console-setup(5) manual page." \
+	" " \
+	'ACTIVE_CONSOLES="/dev/tty[1-6]"' \
+	'CHARMAP="UTF-8"' \
+	" " \
+	"VIDEOMODE=" \
+	'FONT="ter-powerline-v32b.psf.gz"' \
