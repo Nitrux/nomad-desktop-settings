@@ -1,3 +1,9 @@
+nx-desktop-settings-minimal (0.0.2)  nitrux; urgency=medium
+
+  * Add powerline console fonts.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sat, 30 May 2020 21:03:00 -0500
+
 nx-desktop-settings-minimal (0.0.1)  nitrux; urgency=medium
 
   * Create package.
