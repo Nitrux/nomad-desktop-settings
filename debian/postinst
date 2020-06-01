@@ -79,6 +79,7 @@ ln -sv /home/.pnx/usr/lib/opera /usr/lib/opera
 ln -sv /home/.pnx/usr/lib/firefox /usr/lib/firefox
 ln -sv /home/.pnx/usr/share/tracker /usr/share/tracker
 ln -sv /home/.pnx/usr/share/xonotic /usr/share/xonotic
+ln -sv /home/.pnx/usr/share/inkscape /usr/share/inkscape
 
 mkdir -p /usr/lib/zsh/5.8/zsh/
 
