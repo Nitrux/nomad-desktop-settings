@@ -1,3 +1,9 @@
+nx-desktop-settings (1.8.1)  nitrux; urgency=medium
+
+  * Update menus.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sun, 31 May 2020 20:05:00 -0500
+
 nx-desktop-settings (1.8.0)  nitrux; urgency=medium
 
   * Move gtk config to correct path.
