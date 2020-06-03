@@ -1,3 +1,9 @@
+nx-desktop-settings (1.8.5)  nitrux; urgency=medium
+
+  * Fix lubpulsecommon link.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 03 Jun 2020 11:28:00 -0500
+
 nx-desktop-settings (1.8.4)  nitrux; urgency=medium
 
   * Create lubpulsecommon link.
