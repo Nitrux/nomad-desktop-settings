@@ -84,7 +84,7 @@ rm -r /tmp/powerline-fonts
 rm /etc/default/console-setup && touch /etc/default/console-setup
 
 >> /etc/default/console-setup printf "%s\n" \
-	"+# CONFIGURATION FILE FOR SETUPCON" \
+	"# CONFIGURATION FILE FOR SETUPCON" \
 	" " \
 	"# Consult the console-setup(5) manual page." \
 	" " \
