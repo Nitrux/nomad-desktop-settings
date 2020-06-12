@@ -15,7 +15,6 @@ ln -sv /usr/games/nsnake /usr/bin/nsnake
 git clone https://github.com/robbyrussell/oh-my-zsh.git /etc/skel/.oh-my-zsh
 
 mkdir -p /Applications
-mkdir -p /var/lib/pacman/
 
 APPS_SYS='
 https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/znx-master-x86_64.AppImage

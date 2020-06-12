@@ -1,5 +1,11 @@
 nx-desktop-settings (1.8.7)  nitrux; urgency=medium
 
+  * Don't create Pacman cache directory on root.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 11 Jun 2020 19:34:00 -0500
+
+nx-desktop-settings (1.8.7)  nitrux; urgency=medium
+
   * Update pacman.conf paths for PNX.
 
  -- Uri Herrera <uri_herrera@nxos.org>  Thu, 11 Jun 2020 19:29:00 -0500
