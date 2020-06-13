@@ -1,3 +1,9 @@
+nx-desktop-settings (1.9.1)  nitrux; urgency=medium
+
+  * Add config file for makepkg.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sat, 13 Jun 2020 03:42:00 -0500
+
 nx-desktop-settings (1.9.0)  nitrux; urgency=medium
 
   * Update LibreOffice default configuration.
