@@ -19,7 +19,7 @@ mkdir -p /Applications
 APPS_SYS='
 https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/znx-master-x86_64.AppImage
 https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/appimage-cli-tool-x86_64.AppImage
-https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/pnx-1.0.0-x86_64.AppImage
+https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/pnx-1.0.1-x86_64.AppImage
 https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/VMetal-x86_64.AppImage
 https://github.com/AppImage/appimaged/releases/download/continuous/appimaged-x86_64.AppImage
 https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage 
