@@ -1,3 +1,9 @@
+nx-desktop-settings (1.9.5)  nitrux; urgency=medium
+
+  * Uspdate font settings.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sun, 21 Jun 2020 16:33:00 -0500
+
 nx-desktop-settings (1.9.4)  nitrux; urgency=medium
 
   * Use Fira Sans as system font.
