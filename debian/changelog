@@ -1,6 +1,12 @@
+nx-desktop-settings (1.9.6)  nitrux; urgency=medium
+
+  * Update kdenlive, gimp, replace appimage-cli-tool with appimge-manager.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sun, 21 Jun 2020 17:38:00 -0500
+
 nx-desktop-settings (1.9.5)  nitrux; urgency=medium
 
-  * Uspdate font settings.
+  * Update font settings.
 
  -- Uri Herrera <uri_herrera@nxos.org>  Sun, 21 Jun 2020 16:33:00 -0500
 
