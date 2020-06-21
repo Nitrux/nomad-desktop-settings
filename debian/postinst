@@ -4,32 +4,49 @@ set -x
 
 echo QT_STYLE_OVERRIDE=kvantum >> /etc/environment 
 
-echo -e "PATH=$PATH:/Applications\n" > /etc/environment
-sed -i "s|secure_path\=.*$|secure_path=\"$PATH:/Applications\"|g" /etc/sudoers
-sed -i "/env_reset/d" /etc/sudoers
-
 rm -R /usr/share/icons/breeze_cursors /usr/share/icons/Breeze_Snow
-rm /usr/share/applications/ibus-setup* /usr/share/applications/org.freedesktop.IBus* /usr/share/applications/org.kde.plasma.emojier.desktop /usr/share/applications/info.desktop /usr/share/applications/org.kde.kdeconnect.sms.desktop /usr/share/applications/org.kde.kdeconnect_open.desktop /usr/share/applications/org.kde.kdeconnect.app.desktop /usr/share/applications/htop.desktop /usr/share/applications/mc.desktop /usr/share/applications/mcedit.desktop /usr/share/applications/nsnake.desktop /usr/share/applications/org.kde.kinfocenter.desktop
+
+REMOVE_LAUNCHERS='
+/usr/share/applications/htop.desktop
+/usr/share/applications/ibus-setup*
+/usr/share/applications/info.desktop
+/usr/share/applications/mc.desktop
+/usr/share/applications/mcedit.desktop
+/usr/share/applications/nsnake.desktop
+/usr/share/applications/org.freedesktop.IBus*
+/usr/share/applications/org.kde.kdeconnect.app.desktop
+/usr/share/applications/org.kde.kdeconnect.sms.desktop
+/usr/share/applications/org.kde.kdeconnect_open.desktop
+/usr/share/applications/org.kde.kinfocenter.desktop
+/usr/share/applications/org.kde.plasma.emojier.desktop
+'
+
+rm $REMOVE_LAUNCHERS
+
 ln -sv /usr/games/nsnake /usr/bin/nsnake
 
 git clone https://github.com/robbyrussell/oh-my-zsh.git /etc/skel/.oh-my-zsh
 
 mkdir -p /Applications
 
+echo -e "PATH=$PATH:/Applications\n" > /etc/environment
+sed -i "s|secure_path\=.*$|secure_path=\"$PATH:/Applications\"|g" /etc/sudoers
+sed -i "/env_reset/d" /etc/sudoers
+
 APPS_SYS='
 https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/znx-master-x86_64.AppImage
-https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/appimage-cli-tool-x86_64.AppImage
 https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/pnx-1.0.1-x86_64.AppImage
 https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/VMetal-x86_64.AppImage
+https://github.com/AppImageCrafters/appimage-manager/releases/download/v0.1.0/app
 https://github.com/AppImage/appimaged/releases/download/continuous/appimaged-x86_64.AppImage
 https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage 
 https://github.com/ferion11/Proton_Appimage/releases/download/continuous/proton-linux-x86-v4.2-PlayOnLinux-x86_64.AppImage
 '
 
 APPS_USR='
-https://files.kde.org/kdenlive/release/kdenlive-20.04.0-x86_64.appimage
+https://files.kde.org/kdenlive/release/kdenlive-20.04.2c-x86_64.appimage
 https://libreoffice.soluzioniopen.com/stable/fresh/LibreOffice-fresh.basic-x86_64.AppImage
-https://github.com/aferrero2707/gimp-appimage/releases/download/continuous/GIMP_AppImage-git-2.10.19-20200430-x86_64.AppImage
+https://github.com/aferrero2707/gimp-appimage/releases/download/continuous/GIMP_AppImage-git-2.10.21-20200612-x86_64.AppImage
 https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/Waterfox_Current-x86_64.AppImage
 https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/mpv-0.32.0-x86_64.AppImage
 https://media.inkscape.org/dl/resources/file/Inkscape-4035a4f-x86_64.AppImage
@@ -47,7 +64,6 @@ done
 chmod +x /Applications/*
 
 mv /Applications/znx-master-x86_64.AppImage /Applications/znx
-mv /Applications/appimage-cli-tool-x86_64.AppImage /Applications/app
 mv /Applications/pnx-*-x86_64.AppImage /Applications/pnx
 mv /Applications/VMetal-x86_64.AppImage /Applications/vmetal
 mv /Applications/proton-*-x86_64.AppImage /Applications/wine
