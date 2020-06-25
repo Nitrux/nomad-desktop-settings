@@ -1,3 +1,9 @@
+nx-desktop-settings (1.9.8)  nitrux; urgency=medium
+
+  * Add link for sed to /usr/bin.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 25 Jun 2020 02:53:00 -0500
+
 nx-desktop-settings (1.9.7)  nitrux; urgency=medium
 
   * Use custom launcher for mpv.
