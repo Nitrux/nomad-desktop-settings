@@ -151,3 +151,5 @@ rm /etc/skel/.config/Trolltech.conf && touch /etc/skel/.config/Trolltech.conf
 	"Palette\inactive=#fafafa, #515659, #383a40, #333439, #1f1f23, #28292d, #fafafa, #ffffff, #fbfbfb, #3b4042, #2c2d32, #161719, #28c4d8, #def0f3, #377faf, #7f8b8c, #ecedee, #000000, #31363b, #eff0f1, #ffffff" \
 
 ln -sv /bin/sed /usr/bin/sed
+
+sed -i 's/Option "AllowEmptyInitialConfiguration"/Option "AllowEmptyInitialConfiguration" "true"\n    Option "PrimaryGPU" "Yes"/' /usr/share/X11/xorg.conf.d/10-nvidia.conf
