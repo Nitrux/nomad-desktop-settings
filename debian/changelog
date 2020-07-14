@@ -1,3 +1,9 @@
+nx-desktop-settings (2.0.1)  nitrux; urgency=medium
+
+  * Try to fix Nvidia PRIME for OpenRC system.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 13 Jul 2020 21:07:00 -0500
+
 nx-desktop-settings (2.0.0)  nitrux; urgency=medium
 
   * Remove the stupid kwin edge from appearing when the dock is hidden.
