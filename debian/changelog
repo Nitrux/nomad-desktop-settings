@@ -1,3 +1,9 @@
+nx-desktop-settings (2.0.4)  nitrux; urgency=medium
+
+  * Remove Intel X11 conf file.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Tue, 14 Jul 2020 16:52:00 -0500
+
 nx-desktop-settings (2.0.3)  nitrux; urgency=medium
 
   * Try to fix Nvidia PRIME for OpenRC system.
