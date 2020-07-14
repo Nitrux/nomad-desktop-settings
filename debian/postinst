@@ -1,83 +1,78 @@
-#!/bin/bash
+#! /bin/bash
 
-set -x
 
-echo QT_STYLE_OVERRIDE=kvantum >> /etc/environment 
+set -ex
 
-rm -R /usr/share/icons/breeze_cursors /usr/share/icons/Breeze_Snow
 
-REMOVE_LAUNCHERS='
-/usr/share/applications/htop.desktop
-/usr/share/applications/ibus-setup*
-/usr/share/applications/info.desktop
-/usr/share/applications/mc.desktop
-/usr/share/applications/mcedit.desktop
-/usr/share/applications/nsnake.desktop
-/usr/share/applications/org.freedesktop.IBus*
-/usr/share/applications/org.kde.kdeconnect.app.desktop
-/usr/share/applications/org.kde.kdeconnect.sms.desktop
-/usr/share/applications/org.kde.kdeconnect_open.desktop
-/usr/share/applications/org.kde.kinfocenter.desktop
-/usr/share/applications/org.kde.plasma.emojier.desktop
-'
+#	workaround for Calamares.
 
-rm $REMOVE_LAUNCHERS
+>> /etc/environment echo QT_STYLE_OVERRIDE=kvantum
+
+
+#	remove stupid things from Plasma, generic KDE launchers, breeze cursors, etc.
+
+rm -rf \
+	/usr/share/icons/breeze_cursors /usr/share/icons/Breeze_Snow \
+	/usr/share/applications/htop.desktop \
+	/usr/share/applications/ibus-setup* \
+	/usr/share/applications/info.desktop \
+	/usr/share/applications/mc.desktop \
+	/usr/share/applications/mcedit.desktop \
+	/usr/share/applications/nsnake.desktop \
+	/usr/share/applications/org.freedesktop.IBus* \
+	/usr/share/applications/org.kde.kdeconnect.app.desktop \
+	/usr/share/applications/org.kde.kdeconnect.sms.desktop \
+	/usr/share/applications/org.kde.kdeconnect_open.desktop \
+	/usr/share/applications/org.kde.kinfocenter.desktop \
+	/usr/share/applications/org.kde.plasma.emojier.desktop
+
+
+#	let nsnake be reachable through $PATH.
 
 ln -sv /usr/games/nsnake /usr/bin/nsnake
 
+
+#	add oh-my-zsh.
+
 git clone https://github.com/robbyrussell/oh-my-zsh.git /etc/skel/.oh-my-zsh
+
+
+#	add support for AppImages and add AppImages.
 
 mkdir -p /Applications
 
-echo -e "PATH=$PATH:/Applications\n" > /etc/environment
+echo -e "PATH=$PATH:/Applications\n" >> /etc/environment
 sed -i "s|secure_path\=.*$|secure_path=\"$PATH:/Applications\"|g" /etc/sudoers
 sed -i "/env_reset/d" /etc/sudoers
 
-APPS_SYS='
-https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/znx-master-x86_64.AppImage
-https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/pnx-1.0.1-x86_64.AppImage
-https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/VMetal-x86_64.AppImage
-https://github.com/AppImageCrafters/appimage-manager/releases/download/v0.1.0/app
-https://github.com/AppImage/appimaged/releases/download/continuous/appimaged-x86_64.AppImage
-https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage 
-https://github.com/ferion11/Proton_Appimage/releases/download/continuous/proton-linux-x86-v4.2-PlayOnLinux-x86_64.AppImage
-'
+{
+	printf "%s %s\n" \
+		znx				"https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/znx-master-x86_64.AppImage" \
+		pnx				"https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/pnx-1.0.1-x86_64.AppImage" \
+		vmetal			"https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/VMetal-x86_64.AppImage" \
+		app				"https://github.com/AppImageCrafters/appimage-manager/releases/download/v0.1.0/app" \
+		appimaged		"https://github.com/AppImage/appimaged/releases/download/continuous/appimaged-x86_64.AppImage" \
+		appimagetool	"https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage" \
+		wine			"https://github.com/ferion11/Proton_Appimage/releases/download/continuous/proton-linux-x86-v4.2-PlayOnLinux-x86_64.AppImage"
 
-APPS_USR='
-https://files.kde.org/kdenlive/release/kdenlive-20.04.2c-x86_64.appimage
-https://libreoffice.soluzioniopen.com/stable/fresh/LibreOffice-fresh.basic-x86_64.AppImage
-https://github.com/aferrero2707/gimp-appimage/releases/download/continuous/GIMP_AppImage-git-2.10.21-20200612-x86_64.AppImage
-https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/Waterfox_Current-x86_64.AppImage
-https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/mpv-0.32.0-x86_64.AppImage
-https://media.inkscape.org/dl/resources/file/Inkscape-4035a4f-x86_64.AppImage
-https://github.com/LMMS/lmms/releases/download/v1.2.1/lmms-1.2.1-linux-x86_64.AppImage
-'
-
-for x in $APPS_SYS; do
-	axel -a -q -o /Applications $x
-done
-
-for x in $APPS_USR; do
-	axel -a -q -o /Applications $x
-done
+	printf "%s %s\n" \
+		kdenlive		"https://files.kde.org/kdenlive/release/kdenlive-20.04.2c-x86_64.appimage" \
+		libreoffice		"https://libreoffice.soluzioniopen.com/stable/fresh/LibreOffice-fresh.basic-x86_64.AppImage" \
+		gimp			"https://github.com/aferrero2707/gimp-appimage/releases/download/continuous/GIMP_AppImage-git-2.10.21-20200612-x86_64.AppImage" \
+		waterfox		"https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/Waterfox_Current-x86_64.AppImage" \
+		mpv				"https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/mpv-0.32.0-x86_64.AppImage" \
+		inkscape		"https://media.inkscape.org/dl/resources/file/Inkscape-4035a4f-x86_64.AppImage" \
+		lmms			"https://github.com/LMMS/lmms/releases/download/v1.2.1/lmms-1.2.1-linux-x86_64.AppImage"
+} | {
+	while read name url; do
+		axel -a -q -o /Applications/$name "$url"
+	done
+}
 
 chmod +x /Applications/*
 
-mv /Applications/znx-master-x86_64.AppImage /Applications/znx
-mv /Applications/pnx-*-x86_64.AppImage /Applications/pnx
-mv /Applications/VMetal-x86_64.AppImage /Applications/vmetal
-mv /Applications/proton-*-x86_64.AppImage /Applications/wine
-mv /Applications/appimagetool-x86_64.AppImage /Applications/appimagetool
 
-mv /Applications/appimaged-x86_64.AppImage /etc/skel/.local/bin/appimaged
-
-mv /Applications/LibreOffice-*-x86_64.AppImage /Applications/libreoffice
-mv /Applications/Waterfox_Current-x86_64.AppImage /Applications/waterfox
-mv /Applications/kdenlive-*-x86_64.appimage /Applications/kdenlive
-mv /Applications/GIMP_AppImage-*-x86_64.AppImage /Applications/gimp
-mv /Applications/mpv-*-x86_64.AppImage /Applications/mpv
-mv /Applications/Inkscape-*-x86_64.AppImage /Applications/inkscape
-mv /Applications/lmms-*-x86_64.AppImage /Applications/lmms
+#	workarounds for pnx.
 
 ln -sv /home/.pnx/usr/lib/dri /usr/lib/dri
 ln -sv /home/.pnx/usr/lib/pulseaudio /usr/lib/pulseaudio
@@ -97,30 +92,44 @@ ln -sv /home/.pnx/usr/share/xonotic /usr/share/xonotic
 ln -sv /home/.pnx/usr/share/inkscape /usr/share/inkscape
 
 mkdir -p /usr/lib/zsh/5.8/zsh/
-
 ln -sv /home/.pnx/usr/lib/zsh/5.8/zsh/datetime.so /usr/lib/zsh/5.8/zsh/datetime.so
+
+
+#	update npm.
 
 npm install npm@latest -g
 
+
+#	let krohnkite be configured from system settings.
+
 ln -sv /usr/share/kwin/scripts/krohnkite/metadata.desktop /usr/share/kservices5/krohnkite.desktop
 
+
+#	use mksh and zsh in userland.
+
 rm /bin/sh.distrib
-# /usr/bin/dpkg --remove --no-triggers --force-remove-essential --force-bad-path dash
 ln -svf /bin/mksh /bin/sh
-# /usr/bin/dpkg --remove --no-triggers --force-remove-essential --force-bad-path dash
 
 sed -i 's+SHELL=/bin/sh+SHELL=/bin/zsh+g' /etc/default/useradd
 sed -i 's+DSHELL=/bin/bash+DSHELL=/bin/zsh+g' /etc/adduser.conf
 
+
+#	workaround for mpv.
+
 ln -sv /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-13.0.so /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-11.1.so
+
+
+#	add powerline fonts.
+#	TODO: move this to the fonts-nx-desktop package (https://github.com/Nitrux/nx-desktop-settings/issues/10).
 
 git clone https://github.com/powerline/fonts /tmp/powerline-fonts
 cp -r /tmp/powerline-fonts/Terminus/PSF/*.psf.gz /usr/share/consolefonts
 rm -r /tmp/powerline-fonts
 
-rm /etc/default/console-setup && touch /etc/default/console-setup
 
->> /etc/default/console-setup printf "%s\n" \
+#	enable powerline fonts in Linux's console.
+
+> /etc/default/console-setup printf "%s\n" \
 	"# CONFIGURATION FILE FOR SETUPCON" \
 	" " \
 	"# Consult the console-setup(5) manual page." \
@@ -129,11 +138,12 @@ rm /etc/default/console-setup && touch /etc/default/console-setup
 	'CHARMAP="UTF-8"' \
 	" " \
 	"VIDEOMODE=" \
-	'FONT="ter-powerline-v16n.psf.gz"' \	
+	'FONT="ter-powerline-v16n.psf.gz"' \
 
-rm /etc/skel/.config/Trolltech.conf && touch /etc/skel/.config/Trolltech.conf
 
->> /etc/skel/.config/Trolltech.conf  printf "%s\n" \
+#	workaround for kwin.
+
+> /etc/skel/.config/Trolltech.conf printf "%s\n" \
 	"[qt]" \
 	"KDE\contrast=0" \
 	"KWinPalette\activeBackground=#2b2c31" \
@@ -150,6 +160,15 @@ rm /etc/skel/.config/Trolltech.conf && touch /etc/skel/.config/Trolltech.conf
 	"Palette\disabled=#ffffff, #505659, #37383f, #313238, #1e1e22, #27282c, #ffffff, #ffffff, #ffffff, #3a3f41, #2b2c31, #151618, #2b2c31, #ffffff, #2980b9, #7f8c8d, #eff0f1, #000000, #31363b, #eff0f1, #ffffff" \
 	"Palette\inactive=#fafafa, #515659, #383a40, #333439, #1f1f23, #28292d, #fafafa, #ffffff, #fbfbfb, #3b4042, #2c2d32, #161719, #28c4d8, #def0f3, #377faf, #7f8b8c, #ecedee, #000000, #31363b, #eff0f1, #ffffff" \
 
+
+#	workaround for makepkg.
+
 ln -sv /bin/sed /usr/bin/sed
 
-sed -i 's/Option "AllowEmptyInitialConfiguration"/Option "AllowEmptyInitialConfiguration" "true"\n    Option "PrimaryGPU" "Yes"/' /usr/share/X11/xorg.conf.d/10-nvidia.conf
+
+#	workaround for NVidia GPUs using PRIME configuration.
+#	this will make output available on external ports.
+
+sed -i \
+	's/Option "AllowEmptyInitialConfiguration"/Option "AllowEmptyInitialConfiguration" "true"\n    Option "PrimaryGPU" "Yes"/' \
+	/usr/share/X11/xorg.conf.d/10-nvidia.conf
