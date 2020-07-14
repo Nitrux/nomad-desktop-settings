@@ -169,6 +169,13 @@ ln -sv /bin/sed /usr/bin/sed
 #	workaround for NVidia GPUs using PRIME configuration.
 #	this will make output available on external ports.
 
-sed -i \
-	's/Option "AllowEmptyInitialConfiguration"/Option "AllowEmptyInitialConfiguration" "true"\n    Option "PrimaryGPU" "Yes"/' \
-	/usr/share/X11/xorg.conf.d/10-nvidia.conf
+
+> /usr/share/X11/xorg.conf.d/10-nvidia.conf printf "%s\n" \
+	'Section "OutputClass"' \
+	'    Identifier "nvidia"' \
+	'    MatchDriver "nvidia-drm"' \
+	'    Driver "nvidia"' \
+	'    Option "AllowEmptyInitialConfiguration" "true"' \
+	'    Option "PrimaryGPU" "Yes"' \
+	'    ModulePath "/usr/lib/x86_64-linux-gnu/nvidia/xorg"' \
+	'EndSection'
