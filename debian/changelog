@@ -1,3 +1,9 @@
+nx-desktop-settings (2.0.6)  nitrux; urgency=medium
+
+  * Remove line deleting file from dash, dash is not installed.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 17 Jul 2020 16:12:00 -0500
+
 nx-desktop-settings (2.0.5)  nitrux; urgency=medium
 
   * Add Intel X11 conf file.
