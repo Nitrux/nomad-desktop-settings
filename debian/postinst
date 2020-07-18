@@ -160,11 +160,6 @@ rm -r /tmp/powerline-fonts
 	"Palette\inactive=#fafafa, #515659, #383a40, #333439, #1f1f23, #28292d, #fafafa, #ffffff, #fbfbfb, #3b4042, #2c2d32, #161719, #28c4d8, #def0f3, #377faf, #7f8b8c, #ecedee, #000000, #31363b, #eff0f1, #ffffff" \
 
 
-#	workaround for makepkg.
-
-ln -sv /bin/sed /usr/bin/sed
-
-
 #	workaround for NVidia GPUs using PRIME configuration.
 #	this will make output available on external ports.
 

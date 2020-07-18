@@ -1,5 +1,11 @@
 nx-desktop-settings (2.0.7)  nitrux; urgency=medium
 
+  * Remove sed link.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sat, 18 Jul 2020 16:20:00 -0500
+
+nx-desktop-settings (2.0.7)  nitrux; urgency=medium
+
   * Force overwrite link.
 
  -- Uri Herrera <uri_herrera@nxos.org>  Sat, 18 Jul 2020 14:42:00 -0500
