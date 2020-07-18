@@ -29,7 +29,7 @@ rm -rf \
 
 #	let nsnake be reachable through $PATH.
 
-ln -sv /usr/games/nsnake /usr/bin/nsnake
+ln -svf /usr/games/nsnake /usr/bin/nsnake
 
 
 #	add oh-my-zsh.
