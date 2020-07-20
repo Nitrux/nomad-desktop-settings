@@ -1,3 +1,9 @@
+nx-desktop-settings (2.1.0)  nitrux; urgency=medium
+
+  * Blacklist nouveau.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 20 Jul 2020 18:45:00 -0500
+
 nx-desktop-settings (2.0.9)  nitrux; urgency=medium
 
   * Don't blacklist nouveau.
