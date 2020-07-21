@@ -3,12 +3,6 @@
 
 set -ex
 
-
-#	workaround for Calamares.
-
->> /etc/environment echo QT_STYLE_OVERRIDE=kvantum
-
-
 #	remove stupid things from Plasma, generic KDE launchers, breeze cursors, etc.
 
 rm -rf \
