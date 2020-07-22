@@ -131,6 +131,11 @@ ln -sv /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-13.0.so /usr/lib/x86_
 	"Palette\inactive=#fafafa, #515659, #383a40, #333439, #1f1f23, #28292d, #fafafa, #ffffff, #fbfbfb, #3b4042, #2c2d32, #161719, #28c4d8, #def0f3, #377faf, #7f8b8c, #ecedee, #000000, #31363b, #eff0f1, #ffffff" \
 
 
+#	workaround for vmetal
+
+ln -sv /usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 /usr/lib/x86_64-linux-gnu/libffi.so.6
+
+
 #	workaround for NVidia GPUs using PRIME configuration.
 #	this will make output available on external ports.
 
