@@ -1,6 +1,12 @@
+nx-desktop-settings (2.1.4)  nitrux; urgency=medium
+
+  * Move appimaged to correct location.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 23 Jul 2020 16:30:00 -0500
+
 nx-desktop-settings (2.1.3)  nitrux; urgency=medium
 
-  * Workaround for missing library
+  * Workaround for missing library.
 
  -- Uri Herrera <uri_herrera@nxos.org>  Wed, 22 Jul 2020 06:30:00 -0500
 

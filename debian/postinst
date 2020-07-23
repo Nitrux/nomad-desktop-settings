@@ -64,6 +64,8 @@ sed -i "/env_reset/d" /etc/sudoers
 
 chmod +x /Applications/*
 
+mv /Applications/appimaged /etc/skel/.local/bin
+
 
 #	workarounds for pnx.
 
