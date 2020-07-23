@@ -1,3 +1,9 @@
+nx-desktop-settings (2.1.5)  nitrux; urgency=medium
+
+  * Update pnx and waterfox appimages.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 23 Jul 2020 17:31:00 -0500
+
 nx-desktop-settings (2.1.4)  nitrux; urgency=medium
 
   * Move appimaged to correct location.
