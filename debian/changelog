@@ -1,3 +1,9 @@
+nx-desktop-settings (2.1.6)  nitrux; urgency=medium
+
+  * Add asoundrc.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 24 Jul 2020 14:11:00 -0500
+
 nx-desktop-settings (2.1.5)  nitrux; urgency=medium
 
   * Update pnx and waterfox appimages.
