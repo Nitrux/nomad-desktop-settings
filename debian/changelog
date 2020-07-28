@@ -1,3 +1,9 @@
+nx-desktop-settings (2.1.7)  nitrux; urgency=medium
+
+  * Add XDG env. variables, add documentation PDFs, force set X Cursor theme.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Tue, 28 Jul 2020 15:51:00 -0500
+
 nx-desktop-settings (2.1.6)  nitrux; urgency=medium
 
   * Add asoundrc.

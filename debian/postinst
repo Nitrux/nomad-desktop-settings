@@ -152,3 +152,29 @@ ln -sv /usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 /usr/lib/x86_64-linux-gnu/libff
 #	'    Option "AllowExternalGpus" "true"' \
 # 	'    ModulePath "/usr/lib/x86_64-linux-gnu/nvidia/xorg"' \
 # 	'EndSection'
+
+
+#	add xdg_dir environment variables
+
+echo -e "XDG_CONFIG_DIRS=/etc/xdg" >> /etc/environment
+echo -e "XDG_DATA_DIRS=/usr/local/share:/usr/share" >> /etc/environment
+
+
+#	add documentation
+
+{
+	printf "%s %s\n" \
+		Nitrux\ —\ Compendium.pdf		"https://github.com/Nitrux/iso-tool/raw/master/configs/other/compendium_offline.pdf" \
+		Nitrux\ —\ FAQ.pdf				"https://github.com/Nitrux/iso-tool/raw/master/configs/other/faq_offline.pdf"
+} | {
+	while read name url; do
+		axel -a -q -o /etc/skel/Desktop/$name "$url"
+	done
+}
+
+
+#	force set nitrux_cursors as the default x-curosr-theme
+
+cp /usr/share/icons/nitrux_snow_cursors/index.theme /etc/X11/cursors/nitrux_cursors.theme
+ln -svf /etc/X11/cursors/nitrux_cursors.theme /etc/alternatives/x-cursor-theme
+sed -i '$ a Inherits=nitrux_snow_cursors' /etc/X11/cursors/nitrux_cursors.theme
