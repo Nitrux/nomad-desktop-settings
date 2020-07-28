@@ -164,14 +164,16 @@ echo -e "XDG_DATA_DIRS=/usr/local/share:/usr/share" >> /etc/environment
 
 {
 	printf "%s %s\n" \
-		Nitrux\ —\ Compendium.pdf		"https://github.com/Nitrux/iso-tool/raw/master/configs/other/compendium_offline.pdf" \
-		Nitrux\ —\ FAQ.pdf				"https://github.com/Nitrux/iso-tool/raw/master/configs/other/faq_offline.pdf"
+		Compendium.pdf		"https://github.com/Nitrux/iso-tool/raw/master/configs/other/compendium_offline.pdf" \
+		FAQ.pdf				"https://github.com/Nitrux/iso-tool/raw/master/configs/other/faq_offline.pdf"
 } | {
 	while read name url; do
 		axel -a -q -o /etc/skel/Desktop/$name "$url"
 	done
 }
 
+mv /etc/skel/Desktop/Compendium.pdf	/etc/skel/Desktop/Nitrux\ —\ Compendium.pdf
+mv /etc/skel/Desktop/FAQ.pdf /etc/skel/Desktop/Nitrux\ —\ FAQ.pdf
 
 #	force set nitrux_cursors as the default x-curosr-theme
 
