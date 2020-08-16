@@ -50,7 +50,7 @@ sed -i "/env_reset/d" /etc/sudoers
 
 	printf "%s %s\n" \
 		kdenlive		"https://files.kde.org/kdenlive/release/kdenlive-20.04.2c-x86_64.appimage" \
-		libreoffice		"https://libreoffice.soluzioniopen.com/stable/fresh/LibreOffice-fresh.basic-x86_64.AppImage" \
+		libreoffice		"https://libreoffice.soluzioniopen.com/stable/standard/LibreOffice-fresh.standard-x86_64.AppImage" \
 		gimp			"https://github.com/aferrero2707/gimp-appimage/releases/download/continuous/GIMP_AppImage-git-2.10.21-20200612-x86_64.AppImage" \
 		waterfox		"https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/Waterfox_Current-x86_64.AppImage" \
 		mpv				"https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/mpv-0.32.0-x86_64.AppImage" \
