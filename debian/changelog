@@ -1,3 +1,9 @@
+nx-desktop-settings (2.2.2)  nitrux; urgency=medium
+
+  * Also add link for libpulse focal library version and update kdenlive AppImage.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 19 Aug 2020 15:29:00 -0500
+
 nx-desktop-settings (2.2.1)  nitrux; urgency=medium
 
   * Update LibreOffice settings.
