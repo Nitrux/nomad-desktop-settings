@@ -33,6 +33,8 @@ git clone https://github.com/robbyrussell/oh-my-zsh.git /etc/skel/.oh-my-zsh
 #	add support for AppImages and add AppImages.
 
 mkdir -p /Applications
+mkdir -p /etc/skel/Applications
+mkdir -p /etc/skel/.local/bin
 
 echo -e "PATH=$PATH:/Applications\n" >> /etc/environment
 sed -i "s|secure_path\=.*$|secure_path=\"$PATH:/Applications\"|g" /etc/sudoers
@@ -142,7 +144,6 @@ ln -sv /usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 /usr/lib/x86_64-linux-gnu/libff
 #	workaround for NVidia GPUs using PRIME configuration.
 #	this will make output available on external ports.
 
-
 # > /usr/share/X11/xorg.conf.d/10-nvidia.conf printf "%s\n" \
 # 	'Section "OutputClass"' \
 # 	'    Identifier "nvidia"' \
@@ -153,6 +154,13 @@ ln -sv /usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 /usr/lib/x86_64-linux-gnu/libff
 #	'    Option "AllowExternalGpus" "true"' \
 # 	'    ModulePath "/usr/lib/x86_64-linux-gnu/nvidia/xorg"' \
 # 	'EndSection'
+
+> /usr/share/X11/xorg.conf.d/10-amdgpu.conf printf "%s\n" \
+	'Section "OutputClass"' \
+	'    Identifier "AMDgpu"' \
+	'    MatchDriver "amdgpu"' \
+	'    Driver "modsetting"' \
+	'EndSection'
 
 
 #	add xdg_dir environment variables
