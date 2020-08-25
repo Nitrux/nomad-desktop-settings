@@ -1,3 +1,9 @@
+nx-desktop-settings (2.3.1)  nitrux; urgency=medium
+
+  * Fix ssdm theme.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Tue, 25 Aug 2020 16:03:00 -050
+
 nx-desktop-settings (2.3.0)  nitrux; urgency=medium
 
   * Fix ssdm wayland session parameters.
