@@ -1,3 +1,9 @@
+nx-desktop-settings (2.3.3)  nitrux; urgency=medium
+
+  * Fix typo in postinst.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 26 Aug 2020 14:08:00 -050
+
 nx-desktop-settings (2.3.2)  nitrux; urgency=medium
 
   * Add Latte Dock AppImage.
