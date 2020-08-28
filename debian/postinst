@@ -57,8 +57,7 @@ sed -i "/env_reset/d" /etc/sudoers
 		waterfox		"https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/Waterfox_Current-x86_64.AppImage" \
 		mpv				"https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/mpv-0.32.0-x86_64.AppImage" \
 		inkscape		"https://media.inkscape.org/dl/resources/file/Inkscape-4035a4f-x86_64.AppImage" \
-		lmms			"https://github.com/LMMS/lmms/releases/download/v1.2.1/lmms-1.2.1-linux-x86_64.AppImage" \
-		latte-dock		"https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/latte-dock-0.9.11-x86_64.AppImage"
+		lmms			"https://github.com/LMMS/lmms/releases/download/v1.2.1/lmms-1.2.1-linux-x86_64.AppImage"
 } | {
 	while read name url; do
 		axel -a -q -o /Applications/$name "$url"
