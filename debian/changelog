@@ -1,3 +1,9 @@
+nx-desktop-settings (2.3.6)  nitrux; urgency=medium
+
+  * Use newer znx AppImage.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sat, 29 Aug 2020 18:53:00 -050
+
 nx-desktop-settings (2.3.5)  nitrux; urgency=medium
 
   * Remove link creation.
