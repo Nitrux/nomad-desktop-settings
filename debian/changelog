@@ -1,6 +1,12 @@
+nx-desktop-settings (2.3.5)  nitrux; urgency=medium
+
+  * Remove link creation.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sat, 29 Aug 2020 16:09:00 -050
+
 nx-desktop-settings (2.3.4)  nitrux; urgency=medium
 
-  * Remove Latte AppImage
+  * Remove Latte AppImage.
 
  -- Uri Herrera <uri_herrera@nxos.org>  Fri, 28 Aug 2020 02:05:00 -050
 
