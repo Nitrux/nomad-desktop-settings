@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -xe
+
 
 #	remove stupid things from Plasma, generic KDE launchers, breeze cursors, etc.
 
