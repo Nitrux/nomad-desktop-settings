@@ -1,3 +1,9 @@
+nx-desktop-settings (2.4.0)  nitrux; urgency=medium
+
+  * Remove nativefier.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 04 Sep 2020 01:38:00 -050
+
 nx-desktop-settings (2.3.9)  nitrux; urgency=medium
 
   * Leave xtrace on.
