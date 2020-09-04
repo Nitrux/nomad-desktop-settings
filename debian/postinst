@@ -93,11 +93,6 @@ mkdir -p /usr/lib/zsh/5.8/zsh/
 ln -sv /home/.pnx/usr/lib/zsh/5.8/zsh/datetime.so /usr/lib/zsh/5.8/zsh/datetime.so
 
 
-#	update npm.
-
-npm install npm@latest -g
-
-
 #	let krohnkite be configured from system settings.
 
 ln -sv /usr/share/kwin/scripts/krohnkite/metadata.desktop /usr/share/kservices5/krohnkite.desktop
