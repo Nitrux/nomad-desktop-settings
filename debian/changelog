@@ -1,3 +1,9 @@
+nx-desktop-settings (2.4.2)  nitrux; urgency=medium
+
+  * Use older AppImage.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 07 Sep 2020 16:28:00 -050
+
 nx-desktop-settings (2.4.1)  nitrux; urgency=medium
 
   * Rename libreoffice config.

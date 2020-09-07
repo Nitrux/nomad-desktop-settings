@@ -43,7 +43,7 @@ sed -i "/env_reset/d" /etc/sudoers
 
 {
 	printf "%s %s\n" \
-		znx				"https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/znx-development-x86_64.AppImage" \
+		znx				"https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/znx-master-x86_64.AppImage" \
 		pnx				"https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/PNX-x86_64.AppImage" \
 		vmetal			"https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/VMetal-x86_64.AppImage" \
 		app				"https://github.com/AppImageCrafters/appimage-manager/releases/download/v0.1.0/app" \
