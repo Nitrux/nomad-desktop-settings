@@ -18,7 +18,7 @@ raiseOnDesktopChange=false
 settingsComplexity=1
 timerHide=400
 timerShow=100
-viewType=0
+viewType=1
 visibility=2
 wallpaperplugin=org.kde.image
 
@@ -53,7 +53,7 @@ DialogWidth=720
 
 [Containments][1][Applets][115][Configuration][General]
 favoritesPortedToKAstats=true
-hiddenApplications=appimagekit_d503442865b57e93efc80136248e9ac5-appimagetool.desktop,appimagekit_af2a61ed6a4382b836d736b7e16f1c86-nota.desktop,appimagekit_da4ce6d88095897b74691ff50c1472d0-pix.desktop,appimagekit_e8a52b8fb685ab56f8723e31e6b46dde-buho.desktop,appimagekit_ca883caf4f3153910620accd02be42ef-index.desktop,appimagekit_6c5c4f5a56abfe74331dddba73b66f2f-station.desktop,appimagekit_64fd0c61dcc404041230fd55de5d2a34-vvave.desktop,appimagekit_4bd6a6c147ac3496962812f375515a4b-Inkscape.desktop
+hiddenApplications=appimagekit_d503442865b57e93efc80136248e9ac5-appimagetool.desktop,appimagekit_af2a61ed6a4382b836d736b7e16f1c86-nota.desktop,appimagekit_da4ce6d88095897b74691ff50c1472d0-pix.desktop,appimagekit_e8a52b8fb685ab56f8723e31e6b46dde-buho.desktop,appimagekit_ca883caf4f3153910620accd02be42ef-index.desktop,appimagekit_6c5c4f5a56abfe74331dddba73b66f2f-station.desktop,appimagekit_64fd0c61dcc404041230fd55de5d2a34-vvave.desktop,appimagekit_4bd6a6c147ac3496962812f375515a4b-Inkscape.desktop,appimagekit_6797cc6d0035f54ff8d2f25f5364c567-index.desktop,appimagekit_70c719965db13ef25bdcf754833f4973-pix.desktop,appimagekit_9069e18fcdc55dec9e4345a5153168f3-station.desktop,appimagekit_125c1373cb597c374e2017c231b35742-vvave.desktop,appimagekit_6fe83be66aeecafaaf8f26d4133f5c28-buho.desktop,appimagekit_36e3089cc9907f3b9e8d543b810f20cd-nota.desktop
 numberColumns=8
 spaceHeight=16
 spaceWidth=24
@@ -133,6 +133,8 @@ zoomLevel=0
 [Containments][1][Indicator]
 customType=
 enabled=true
+enabledForApplets=true
+padding=0.07999999821186066
 type=org.kde.latte.default
 
 [Containments][1][Indicator][org.kde.latte.default][General]
@@ -157,13 +159,6 @@ immutability=1
 plugin=org.nx.audio
 
 [Containments][100][Applets][101][Configuration]
-PreloadWeight=0
-
-[Containments][100][Applets][102]
-immutability=1
-plugin=org.kde.plasma.printmanager
-
-[Containments][100][Applets][102][Configuration]
 PreloadWeight=0
 
 [Containments][100][Applets][103]
@@ -209,7 +204,14 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][100][Applets][125][Configuration]
-PreloadWeight=2
+PreloadWeight=0
+
+[Containments][100][Applets][126]
+immutability=1
+plugin=org.kde.plasma.bluetooth
+
+[Containments][100][Applets][126][Configuration]
+PreloadWeight=10
 
 [Containments][100][ConfigDialog]
 DialogHeight=540
@@ -272,7 +274,7 @@ subsMatch="Telegram Desktop","Gimp-.*","Waterfox-Current","Ld-Linux-X86-64.So.2"
 subsReplace="Telegram","Gimp","Waterfox","Inkscape","Gimp","LibreOffice"
 
 [Containments][120][ConfigDialog]
-DialogHeight=1285
+DialogHeight=612
 DialogWidth=509
 
 [Containments][120][Configuration]
@@ -290,6 +292,7 @@ disablePanelShadowForMaximized=true
 iconSize=24
 inConfigureAppletsMode=true
 lengthExtMargin=25
+panelPosition=Left
 panelShadows=false
 panelSize=100
 shadowOpacity=100
@@ -303,6 +306,8 @@ tasksUpgraded=true
 [Containments][120][Indicator]
 customType=
 enabled=false
+enabledForApplets=true
+padding=0.07999999821186066
 type=org.kde.latte.default
 
 [LayoutSettings]
@@ -311,7 +316,7 @@ backgroundStyle=0
 color=blue
 customBackground=
 customTextColor=fcfcfc
-lastUsedActivity=81e58561-e71b-4b03-b9d3-1744b2eff876
+lastUsedActivity=2caf3a49-8d86-470c-bb75-e96b2c95d188
 launchers=
 preferredForShortcutsTouched=false
 showInMenu=true

@@ -52,12 +52,12 @@ sed -i "/env_reset/d" /etc/sudoers
 		wine			"https://github.com/ferion11/Proton_Appimage/releases/download/continuous/proton-linux-x86-v4.2-PlayOnLinux-x86_64.AppImage"
 
 	printf "%s %s\n" \
-		kdenlive		"https://files.kde.org/kdenlive/release/kdenlive-20.08.0-x86_64.appimage" \
+		kdenlive		"https://files.kde.org/kdenlive/release/kdenlive-20.08.1-x86_64.appimage" \
 		libreoffice		"https://libreoffice.soluzioniopen.com/stable/standard/LibreOffice-fresh.standard-x86_64.AppImage" \
-		gimp			"https://github.com/aferrero2707/gimp-appimage/releases/download/continuous/GIMP_AppImage-git-2.10.21-20200612-x86_64.AppImage" \
+		gimp			"https://github.com/aferrero2707/gimp-appimage/releases/download/continuous/GIMP_AppImage-git-2.99.1-20200904-x86_64.AppImage" \
 		waterfox		"https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/Waterfox_Current-x86_64.AppImage" \
 		mpv				"https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/mpv-0.32.0-x86_64.AppImage" \
-		inkscape		"https://media.inkscape.org/dl/resources/file/Inkscape-4035a4f-x86_64.AppImage" \
+		inkscape		"https://inkscape.org/es/gallery/item/21590/Inkscape-3bc2e81-x86_64.AppImage" \
 		lmms			"https://github.com/LMMS/lmms/releases/download/v1.2.1/lmms-1.2.1-linux-x86_64.AppImage"
 } | {
 	while read name url; do
