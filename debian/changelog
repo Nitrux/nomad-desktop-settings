@@ -1,3 +1,9 @@
+nx-desktop-settings (2.4.8)  nitrux; urgency=medium
+
+  * Use new appimage, again.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 10 Sep 2020 17:17:00 -0500
+
 nx-desktop-settings (2.4.7)  nitrux; urgency=medium
 
   * Fix autostart launchers, add latte appimage.
