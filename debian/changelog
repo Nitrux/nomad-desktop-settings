@@ -1,3 +1,9 @@
+nx-desktop-settings (2.4.7)  nitrux; urgency=medium
+
+  * Fix autostart launchers, add latte appimage.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 09 Sep 2020 20:48:00 -0500
+
 nx-desktop-settings (2.4.6)  nitrux; urgency=medium
 
   * Fix typo in postinst.

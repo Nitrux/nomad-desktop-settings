@@ -58,6 +58,7 @@ sed -i "/env_reset/d" /etc/sudoers
 		gimp			"https://github.com/aferrero2707/gimp-appimage/releases/download/continuous/GIMP_AppImage-git-2.99.1-20200904-x86_64.AppImage" \
 		waterfox		"https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/Waterfox_Current-x86_64.AppImage" \
 		mpv				"https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/mpv-0.32.0-x86_64.AppImage" \
+		latte-dock		"https://raw.githubusercontent.com/UriHerrera/storage/master/AppImages/bin/latte-dock-0.9.11-x86_64.AppImage" \
 		inkscape		"https://inkscape.org/es/gallery/item/21590/Inkscape-3bc2e81-x86_64.AppImage" \
 		lmms			"https://github.com/LMMS/lmms/releases/download/v1.2.1/lmms-1.2.1-linux-x86_64.AppImage"
 } | {
