@@ -1,3 +1,9 @@
+nx-desktop-settings (2.4.9)  nitrux; urgency=medium
+
+  * Don't add latte appimage.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 17 Sep 2020 19:05:00 -0500
+
 nx-desktop-settings (2.4.8)  nitrux; urgency=medium
 
   * Use new appimage, again.
