@@ -120,23 +120,23 @@ ln -sv /usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 /usr/lib/x86_64-linux-gnu/libff
 #	workaround for NVidia GPUs using PRIME configuration.
 #	this will make output available on external ports.
 
-> /usr/share/X11/xorg.conf.d/10-nvidia.conf printf "%s\n" \
-	'Section "OutputClass"' \
-	'    Identifier "nvidia"' \
-	'    MatchDriver "nvidia-drm"' \
-	'    Driver "nvidia"' \
-	'    Option "AllowEmptyInitialConfiguration" "true"' \
-	'    Option "PrimaryGPU" "Yes"' \
-	'    Option "AllowExternalGpus" "true"' \
-	'    ModulePath "/usr/lib/x86_64-linux-gnu/nvidia/xorg"' \
-	'EndSection'
+# > /usr/share/X11/xorg.conf.d/10-nvidia.conf printf "%s\n" \
+# 	'Section "OutputClass"' \
+# 	'    Identifier "nvidia"' \
+# 	'    MatchDriver "nvidia-drm"' \
+# 	'    Driver "nvidia"' \
+# 	'    Option "AllowEmptyInitialConfiguration" "true"' \
+# 	'    Option "PrimaryGPU" "Yes"' \
+# 	'    Option "AllowExternalGpus" "true"' \
+# 	'    ModulePath "/usr/lib/x86_64-linux-gnu/nvidia/xorg"' \
+# 	'EndSection'
 
-> /usr/share/X11/xorg.conf.d/10-amdgpu.conf printf "%s\n" \
-	'Section "OutputClass"' \
-	'    Identifier "AMDgpu"' \
-	'    MatchDriver "amdgpu"' \
-	'    Driver "modsetting"' \
-	'EndSection'
+# > /usr/share/X11/xorg.conf.d/10-amdgpu.conf printf "%s\n" \
+# 	'Section "OutputClass"' \
+# 	'    Identifier "AMDgpu"' \
+# 	'    MatchDriver "amdgpu"' \
+# 	'    Driver "modsetting"' \
+# 	'EndSection'
 
 
 #	add xdg_dir environment variables
