@@ -1,3 +1,9 @@
+nx-desktop-settings (2.5.0)  nitrux; urgency=medium
+
+  * Seriously Nvidia, again.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 18 Sep 2020 21:40:00 -0500
+
 nx-desktop-settings (2.4.9)  nitrux; urgency=medium
 
   * Don't add latte appimage.
