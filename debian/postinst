@@ -122,8 +122,8 @@ ln -sv /usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 /usr/lib/x86_64-linux-gnu/libff
 
 > /usr/share/X11/xorg.conf.d/10-nvidia.conf printf "%s\n" \
 	'Section "OutputClass"' \
-	'    Identifier "nvidia"' \
-	'    MatchDriver "nvidia"' \
+	'    Identifier "Nvidia"' \
+	'    MatchDriver "nvidia-drm"' \
 	'    Driver "nvidia"' \
 	'    Option "AllowEmptyInitialConfiguration" "true"' \
 	'    Option "PrimaryGPU" "Yes"' \
@@ -134,19 +134,21 @@ ln -sv /usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 /usr/lib/x86_64-linux-gnu/libff
 # 	'Section "OutputClass"' \
 # 	'    Identifier "AMDgpu"' \
 # 	'    MatchDriver "amdgpu"' \
-# 	'    Driver "modsetting"' \
+# 	'    Driver "amdgpu"' \
+#	'    Option "PrimaryGPU" "No"' \
 # 	'EndSection'
 
 > /usr/share/X11/xorg.conf.d/10-intel.conf printf "%s\n" \
 	'Section "OutputClass"' \
 	'    Identifier "Intel"' \
 	'    MatchDriver "i915"' \
-	'    Driver "modsetting"' \
+	'    Driver "i915"' \
+	'    Option "PrimaryGPU" "No"' \		
 	'EndSection'
 
 # > /usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf printf "%s\n" \
 # 	'Section "OutputClass"' \
-# 	'    Identifier "nvidia"' \
+# 	'    Identifier "Nvidia"' \
 # 	'    MatchDriver "nvidia-drm"' \
 # 	'    Driver "nvidia"' \
 # 	'    Option "AllowEmptyInitialConfiguration" "true"' \
@@ -176,6 +178,7 @@ echo -e "XDG_DATA_DIRS=/usr/local/share:/usr/share" >> /etc/environment
 
 mv /etc/skel/Desktop/Compendium.pdf	/etc/skel/Desktop/Nitrux\ —\ Compendium.pdf
 mv /etc/skel/Desktop/FAQ.pdf /etc/skel/Desktop/Nitrux\ —\ FAQ.pdf
+
 
 #	force set nitrux_cursors as the default x-curosr-theme
 
