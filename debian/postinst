@@ -123,11 +123,10 @@ ln -sv /usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 /usr/lib/x86_64-linux-gnu/libff
 > /usr/share/X11/xorg.conf.d/10-nvidia.conf printf "%s\n" \
 	'Section "OutputClass"' \
 	'    Identifier "nvidia"' \
-	'    MatchDriver "nvidia-drm"' \
+	'    MatchDriver "nvidia"' \
 	'    Driver "nvidia"' \
 	'    Option "AllowEmptyInitialConfiguration" "true"' \
 	'    Option "PrimaryGPU" "Yes"' \
-	'    Option "AllowExternalGpus" "true"' \
 	'    ModulePath "/usr/lib/x86_64-linux-gnu/nvidia/xorg"' \
 	'EndSection'
 
