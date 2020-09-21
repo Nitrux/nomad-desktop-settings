@@ -120,14 +120,14 @@ ln -sv /usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 /usr/lib/x86_64-linux-gnu/libff
 #	workaround for NVidia GPUs using PRIME configuration.
 #	this will make output available on external ports.
 
-> /usr/share/X11/xorg.conf.d/10-nvidia.conf printf "%s\n" \
-	'Section "OutputClass"' \
-	'    Identifier "Nvidia"' \
-	'    MatchDriver "nvidia-drm"' \
-	'    Driver "nvidia"' \
-	'    Option "AllowEmptyInitialConfiguration" "true"' \
-	'    ModulePath "/usr/lib/x86_64-linux-gnu/nvidia/xorg"' \
-	'EndSection'
+# > /usr/share/X11/xorg.conf.d/10-nvidia.conf printf "%s\n" \
+# 	'Section "OutputClass"' \
+# 	'    Identifier "Nvidia"' \
+# 	'    MatchDriver "nvidia-drm"' \
+# 	'    Driver "nvidia"' \
+# 	'    Option "AllowEmptyInitialConfiguration" "true"' \
+# 	'    ModulePath "/usr/lib/x86_64-linux-gnu/nvidia/xorg"' \
+# 	'EndSection'
 
 # > /usr/share/X11/xorg.conf.d/10-amdgpu.conf printf "%s\n" \
 # 	'Section "OutputClass"' \
@@ -142,19 +142,18 @@ ln -sv /usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 /usr/lib/x86_64-linux-gnu/libff
 	'    Identifier "Intel"' \
 	'    MatchDriver "i915"' \
 	'    Driver "modsetting"' \
-	'    Option "PrimaryGPU" "Yes"' \
 	'EndSection'
 
-# > /usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf printf "%s\n" \
-# 	'Section "OutputClass"' \
-# 	'    Identifier "Nvidia"' \
-# 	'    MatchDriver "nvidia-drm"' \
-# 	'    Driver "nvidia"' \
-# 	'    Option "AllowEmptyInitialConfiguration" "true"' \
-# 	'    Option "PrimaryGPU" "Yes"' \
-# 	'    Option "AllowExternalGpus" "true"' \
-# 	'    ModulePath "/usr/lib/x86_64-linux-gnu/nvidia/xorg"' \
-# 	'EndSection'
+> /usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf printf "%s\n" \
+	'Section "OutputClass"' \
+	'    Identifier "Nvidia"' \
+	'    MatchDriver "nvidia-drm"' \
+	'    Driver "nvidia"' \
+	'    Option "AllowEmptyInitialConfiguration" "true"' \
+	'    Option "PrimaryGPU" "Yes"' \
+	'    Option "AllowExternalGpus" "true"' \
+	'    ModulePath "/usr/lib/x86_64-linux-gnu/nvidia/xorg"' \
+	'EndSection'
 
 
 #	add xdg_dir environment variables
