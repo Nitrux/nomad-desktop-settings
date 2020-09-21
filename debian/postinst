@@ -141,20 +141,20 @@ ln -sv /usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 /usr/lib/x86_64-linux-gnu/libff
 	'Section "OutputClass"' \
 	'    Identifier "Intel"' \
 	'    MatchDriver "i915"' \
-	'    Driver "i915"' \
-	'    Option "PrimaryGPU" "No"' \
+	'    Driver "modsetting"' \
+	'    Option "PrimaryGPU" "Yes"' \
 	'EndSection'
 
-> /usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf printf "%s\n" \
-	'Section "OutputClass"' \
-	'    Identifier "Nvidia"' \
-	'    MatchDriver "nvidia-drm"' \
-	'    Driver "nvidia"' \
-	'    Option "AllowEmptyInitialConfiguration" "true"' \
-	'    Option "PrimaryGPU" "Yes"' \
-	'    Option "AllowExternalGpus" "true"' \
-	'    ModulePath "/usr/lib/x86_64-linux-gnu/nvidia/xorg"' \
-	'EndSection'
+# > /usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf printf "%s\n" \
+# 	'Section "OutputClass"' \
+# 	'    Identifier "Nvidia"' \
+# 	'    MatchDriver "nvidia-drm"' \
+# 	'    Driver "nvidia"' \
+# 	'    Option "AllowEmptyInitialConfiguration" "true"' \
+# 	'    Option "PrimaryGPU" "Yes"' \
+# 	'    Option "AllowExternalGpus" "true"' \
+# 	'    ModulePath "/usr/lib/x86_64-linux-gnu/nvidia/xorg"' \
+# 	'EndSection'
 
 
 #	add xdg_dir environment variables
