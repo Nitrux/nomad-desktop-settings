@@ -124,7 +124,7 @@ ln -sv /usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 /usr/lib/x86_64-linux-gnu/libff
 	'Section "OutputClass"' \
 	'    Identifier "Nvidia"' \
 	'    MatchDriver "nvidia-drm"' \
-	'    Driver "modeetting"' \
+	'    Driver "nvidia-drm"' \
 	'EndSection'
 
 # > /usr/share/X11/xorg.conf.d/10-amdgpu.conf printf "%s\n" \
