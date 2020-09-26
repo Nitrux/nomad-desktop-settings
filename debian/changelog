@@ -1,8 +1,8 @@
-nx-desktop-settings (2.6.8)  nitrux; urgency=medium
+nx-desktop-settings (2.6.9)  nitrux; urgency=medium
 
   * Seriously Nvidia, again.
 
- -- Uri Herrera <uri_herrera@nxos.org>  Mon, 21 Sep 2020 01:28:00 -0500
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 21 Sep 2020 21:29:00 -0500
 
 nx-desktop-settings (2.5.0)  nitrux; urgency=medium
 
