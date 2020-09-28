@@ -1,3 +1,9 @@
+nx-desktop-settings (2.7.0)  nitrux; urgency=medium
+
+  * Update AppImages.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 21 Sep 2020 21:29:00 -0500
+
 nx-desktop-settings (2.6.9)  nitrux; urgency=medium
 
   * Seriously Nvidia, again.
