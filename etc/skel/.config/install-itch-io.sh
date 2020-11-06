@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /bin/bash
 
 set -eu -o pipefail 
 
@@ -15,4 +15,3 @@ chmod +x ~/.config/itch-setup
 [ -d ~/.itch ] && rm ~/.config/itch-setup ~/.local/share/applications/install.itch.io.desktop
 
 exit
-
