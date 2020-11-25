@@ -1,3 +1,9 @@
+nx-desktop-settings (2.7.4)  nitrux; urgency=medium
+
+  * Update Kdenlive, mpv and Inkscape.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Tue, 24 Nov 2020 18:03:00 -0500
+
 nx-desktop-settings (2.7.3)  nitrux; urgency=medium
 
   * Update kdenlive and Inkscape.
