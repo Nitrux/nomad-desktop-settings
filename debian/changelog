@@ -1,3 +1,9 @@
+nx-desktop-settings (2.7.5)  nitrux; urgency=medium
+
+  * Update Libreoffice config.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 27 Nov 2020 03:13:00 -0500
+
 nx-desktop-settings (2.7.4)  nitrux; urgency=medium
 
   * Update Kdenlive, mpv and Inkscape.
