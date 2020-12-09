@@ -1,3 +1,9 @@
+nx-desktop-settings (2.7.6)  nitrux; urgency=medium
+
+  * Update Waterfox, use znx master.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Tue, 08 Dec 2020 18:11:00 -0500
+
 nx-desktop-settings (2.7.5)  nitrux; urgency=medium
 
   * Update Libreoffice config.
