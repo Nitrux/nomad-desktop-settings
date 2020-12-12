@@ -1,3 +1,9 @@
+nx-desktop-settings (2.7.7)  nitrux; urgency=medium
+
+  * Update Waterfox, remove custom launchers.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sat, 12 Dec 2020 08:05:00 -0500
+
 nx-desktop-settings (2.7.6)  nitrux; urgency=medium
 
   * Update Waterfox, use znx master.
