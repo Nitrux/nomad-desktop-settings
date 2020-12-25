@@ -1,5 +1,11 @@
 nx-desktop-settings (2.7.9)  nitrux; urgency=medium
 
+  * Fix typos custom launchers.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 25 Dec 2020 14:33:00 -0500
+
+nx-desktop-settings (2.7.9)  nitrux; urgency=medium
+
   * Add custom launchers.
 
  -- Uri Herrera <uri_herrera@nxos.org>  Fri, 25 Dec 2020 10:27:00 -0500
