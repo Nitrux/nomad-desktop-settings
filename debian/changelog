@@ -1,3 +1,9 @@
+nx-desktop-settings (2.8.3)  nitrux; urgency=medium
+
+  * Update launcher.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 07 Jan 2020 01:50:00 -0500
+
 nx-desktop-settings (2.8.2)  nitrux; urgency=medium
 
   * Add custom launcher, update app menu.
