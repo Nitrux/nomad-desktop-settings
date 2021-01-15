@@ -1,3 +1,9 @@
+nx-desktop-settings (2.8.6)  nitrux; urgency=medium
+
+  * Update gimp.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 15 Jan 2020 16:07:00 -0500
+
 nx-desktop-settings (2.8.5)  nitrux; urgency=medium
 
   * Update Parachute.
