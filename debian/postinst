@@ -117,43 +117,6 @@ ln -sv /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-14.0.so /usr/lib/x86_
 ln -sv /usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 /usr/lib/x86_64-linux-gnu/libffi.so.6
 
 
-#	workaround for NVidia GPUs using PRIME configuration.
-#	this will make output available on external ports.
-#	FIXME: move to separate package that also installs the driver.
-
-test -f /usr/share/X11/xorg.conf.d/10-nvidia.conf && {
-	echo 'Nvidia Proprietary Driver installed!, adding X11 configuration.'
-		> /usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf printf "%s\n" \
-			'Section "OutputClass"' \
-			'	Identifier "nvidia"' \
-			'	MatchDriver "nvidia-drm"' \
-			'	Driver "nvidia"' \
-			'	Option "PrimaryGPU" "Yes"' \
-			'	Option "AllowEmptyInitialConfiguration" "true"' \
-			'	Option "AllowExternalGpus" "true"' \
-			'EndSection'
-
-		> /usr/share/X11/xorg.conf.d/10-amdgpu.conf printf "%s\n" \
-			'Section "OutputClass"' \
-			'    Identifier "AMDgpu"' \
-			'    MatchDriver "amdgpu"' \
-			'    Driver "modsetting"' \
-			'EndSection'
-
-		> /usr/share/X11/xorg.conf.d/10-intel.conf printf "%s\n" \
-			'Section "OutputClass"' \
-			'    Identifier "Intel"' \
-			'    MatchDriver "i915"' \
-			'    Driver "modsetting"' \
-			'EndSection'
-
-		> /etc/modprobe.d/blacklist-nouveau.conf printf "%s\n" \
-			'blacklist nouveau'
-} || {
-	echo 'Nvidia Proprietary Driver not installed!, skipping X11 configuration.'
-}
-
-
 #	add xdg_dir environment variables
 
 echo -e "XDG_CONFIG_DIRS=/etc/xdg" >> /etc/environment

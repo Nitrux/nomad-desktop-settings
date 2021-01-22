@@ -1,3 +1,9 @@
+nx-desktop-settings (2.8.7)  nitrux; urgency=medium
+
+  * Move Nvidia driver config to separate package.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 21 Jan 2021 17:51:00 -0500
+
 nx-desktop-settings (2.8.6)  nitrux; urgency=medium
 
   * Update gimp.
