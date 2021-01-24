@@ -1,3 +1,9 @@
+nx-desktop-settings (2.8.9)  nitrux; urgency=medium
+
+  * Update latte config.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sat, 23 Jan 2021 18:47:00 -0500
+
 nx-desktop-settings (2.8.8)  nitrux; urgency=medium
 
   * Move AppImage downloads to separate package.
