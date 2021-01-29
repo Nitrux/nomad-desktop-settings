@@ -12,6 +12,5 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Defaults settings for NX Desktop minimal
  Default settings for:
-  - SLiM
   - zsh
 
