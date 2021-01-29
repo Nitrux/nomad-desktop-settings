@@ -10,9 +10,8 @@ Homepage: http://nx-desktop.org
 Package: nx-desktop-settings-minimal
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Defaults settings for NX Desktop
+Description: Defaults settings for NX Desktop minimal
  Default settings for:
-  - KDE Plasma
-  - Latte
-  - Kvantum
+  - SLiM
+  - zsh
 

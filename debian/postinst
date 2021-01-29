@@ -1,96 +1,67 @@
-#!/bin/bash
+#! /bin/bash
 
-set -x
+set -xe
 
-echo QT_STYLE_OVERRIDE=kvantum >> /etc/environment 
 
-echo -e "PATH=$PATH:/Applications\n" > /etc/environment
-sed -i "s|secure_path\=.*$|secure_path=\"$PATH:/Applications\"|g" /etc/sudoers
-sed -i "/env_reset/d" /etc/sudoers
+#	remove stupid things from Plasma, generic KDE launchers, breeze cursors, etc.
 
-rm -R /usr/share/icons/breeze_cursors /usr/share/icons/Breeze_Snow
-rm /usr/share/applications/ibus-setup* /usr/share/applications/org.freedesktop.IBus* /usr/share/applications/org.kde.plasma.emojier.desktop /usr/share/applications/info.desktop /usr/share/applications/org.kde.kdeconnect.sms.desktop /usr/share/applications/org.kde.kdeconnect_open.desktop /usr/share/applications/org.kde.kdeconnect.app.desktop /usr/share/applications/htop.desktop /usr/share/applications/mc.desktop /usr/share/applications/mcedit.desktop /usr/share/applications/nsnake.desktop /usr/share/applications/org.kde.kinfocenter.desktop
-ln -sv /usr/games/nsnake /usr/bin/nsnake
+rm -rf \
+	/usr/share/applications/htop.desktop \
+	/usr/share/applications/links2.desktop \
+	/usr/share/applications/mc.desktop \
+	/usr/share/applications/mcedit.desktop \
+	/usr/share/applications/nsnake.desktop
+
+
+#	let nsnake be reachable through $PATH.
+
+ln -svf /usr/games/nsnake /usr/bin/nsnake
+
+
+#	add oh-my-zsh.
 
 git clone https://github.com/robbyrussell/oh-my-zsh.git /etc/skel/.oh-my-zsh
 
-mkdir -p /Applications
-mkdir -p /var/lib/pacman/
 
-APPS_SYS='
-https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/znx-master-x86_64.AppImage
-https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/appimage-cli-tool-x86_64.AppImage
-https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/pnx-1.0.0-x86_64.AppImage
-https://raw.githubusercontent.com/Nitrux/storage/master/AppImages/VMetal-x86_64.AppImage
-https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage 
-'
+#	add support for AppImages,
 
-APPS_USR='
+echo -e "PATH=$PATH:/Applications\n" >> /etc/environment
+sed -i "s|secure_path\=.*$|secure_path=\"$PATH:/Applications\"|g" /etc/sudoers
+sed -i "/env_reset/d" /etc/sudoers
 
-'
 
-for x in $APPS_SYS; do
-	axel -a -q -o /Applications $x
-done
+#	use mksh and zsh in userland.
 
-for x in $APPS_USR; do
-	axel -a -q -o /Applications $x
-done
-
-chmod +x /Applications/*
-
-mv /Applications/znx-master-x86_64.AppImage /Applications/znx
-mv /Applications/appimage-cli-tool-x86_64.AppImage /Applications/app
-mv /Applications/pnx-*-x86_64.AppImage /Applications/pnx
-mv /Applications/VMetal-x86_64.AppImage /Applications/vmetal
-mv /Applications/appimagetool-x86_64.AppImage /Applications/appimagetool
-
-mv /Applications/appimaged-x86_64.AppImage /etc/skel/.local/bin/appimaged
-
-ln -sv /home/.pnx/usr/lib/dri /usr/lib/dri
-ln -sv /home/.pnx/usr/lib/pulseaudio /usr/lib/pulseaudio
-ln -sv /home/.pnx/usr/lib/gdk-pixbuf-2.0 /usr/lib/gdk-pixbuf-2.0
-ln -sv /home/.pnx/usr/lib/gs-plugins-13 /usr/lib/gs-plugins-13
-ln -sv /home/.pnx/usr/lib/liblmdb.so /usr/lib/liblmdb.so
-ln -sv /home/.pnx/usr/lib/systemd /usr/lib/systemd
-ln -sv /home/.pnx/usr/lib/samba /usr/lib/samba
-ln -sv /home/.pnx/usr/lib/girepository-1.0 /usr/lib/girepository-1.0
-ln -sv /home/.pnx/usr/lib/tracker-2.0 /usr/lib/tracker-2.0
-ln -sv /home/.pnx/usr/lib/WebKitNetworkProcess /usr/lib/WebKitNetworkProcess
-ln -sv /home/.pnx/usr/lib/epiphany /usr/lib/epiphany
-ln -sv /home/.pnx/usr/lib/opera /usr/lib/opera
-ln -sv /home/.pnx/usr/lib/firefox /usr/lib/firefox
-ln -sv /home/.pnx/usr/share/tracker /usr/share/tracker
-ln -sv /home/.pnx/usr/share/xonotic /usr/share/xonotic
-
-mkdir -p /usr/lib/zsh/5.8/zsh/
-
-ln -sv /home/.pnx/usr/lib/zsh/5.8/zsh/datetime.so /usr/lib/zsh/5.8/zsh/datetime.so
-
-npm install npm@latest -g
-
-rm /bin/sh.distrib
-# /usr/bin/dpkg --remove --no-triggers --force-remove-essential --force-bad-path dash
 ln -svf /bin/mksh /bin/sh
-# /usr/bin/dpkg --remove --no-triggers --force-remove-essential --force-bad-path dash
 
 sed -i 's+SHELL=/bin/sh+SHELL=/bin/zsh+g' /etc/default/useradd
 sed -i 's+DSHELL=/bin/bash+DSHELL=/bin/zsh+g' /etc/adduser.conf
 
-git clone https://github.com/powerline/fonts /tmp/powerline-fonts
-cp -r /tmp/powerline-fonts/Terminus/PSF/*.psf.gz /usr/share/consolefonts
-rm -r /tmp/powerline-fonts
 
-rm /etc/default/console-setup && touch /etc/default/console-setup
+#	workaround for vmetal
 
->> /etc/default/console-setup printf "%s\n" \
-	"# CONFIGURATION FILE FOR SETUPCON" \
-	" " \
-	"# Consult the console-setup(5) manual page." \
-	" " \
-	'ACTIVE_CONSOLES="/dev/tty[1-6]"' \
-	'CHARMAP="UTF-8"' \
-	" " \
-	"VIDEOMODE=" \
-	'FONT="ter-powerline-v16n.psf.gz"' \
-	
+ln -sv /usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 /usr/lib/x86_64-linux-gnu/libffi.so.6
+
+
+#	add xdg_dir environment variables
+
+echo -e "XDG_CONFIG_DIRS=/etc/xdg" >> /etc/environment
+echo -e "XDG_DATA_DIRS=/usr/local/share:/usr/share" >> /etc/environment
+
+
+# #	add documentation
+# #FIXME Change documentation.
+
+# {
+# 	printf "%s %s\n" \
+# 		Compendium.pdf		"https://github.com/Nitrux/iso-tool/raw/master/configs/other/compendium_offline.pdf" \
+# 		FAQ.pdf				"https://github.com/Nitrux/iso-tool/raw/master/configs/other/faq_offline.pdf"
+# } | {
+# 	while read name url; do
+# 		axel -a -q -o /etc/skel/Desktop/$name "$url"
+# 	done
+# }
+
+# mv /etc/skel/Desktop/Compendium.pdf	/etc/skel/Desktop/Nitrux\ —\ Compendium.pdf
+# mv /etc/skel/Desktop/FAQ.pdf /etc/skel/Desktop/Nitrux\ —\ FAQ.pdf
+
