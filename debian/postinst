@@ -1,24 +1,16 @@
 #! /bin/bash
 
-set -x
+set -xe
+
 
 #	remove stupid things from Plasma, generic KDE launchers, breeze cursors, etc.
 
 rm -rf \
-	/usr/share/icons/breeze_cursors /usr/share/icons/Breeze_Snow \
 	/usr/share/applications/htop.desktop \
-	/usr/share/applications/ibus-setup* \
-	/usr/share/applications/info.desktop \
 	/usr/share/applications/links2.desktop \
 	/usr/share/applications/mc.desktop \
 	/usr/share/applications/mcedit.desktop \
-	/usr/share/applications/nsnake.desktop \
-	/usr/share/applications/org.freedesktop.IBus* \
-	/usr/share/applications/org.kde.kdeconnect.app.desktop \
-	/usr/share/applications/org.kde.kdeconnect.sms.desktop \
-	/usr/share/applications/org.kde.kdeconnect_open.desktop \
-	/usr/share/applications/org.kde.kinfocenter.desktop \
-	/usr/share/applications/org.kde.plasma.emojier.desktop 
+	/usr/share/applications/nsnake.desktop
 
 
 #	let nsnake be reachable through $PATH.
@@ -31,30 +23,11 @@ ln -svf /usr/games/nsnake /usr/bin/nsnake
 git clone https://github.com/robbyrussell/oh-my-zsh.git /etc/skel/.oh-my-zsh
 
 
-# fix systemd.
-
-sed -i 's/#DefaultTimeoutStartSec=90s/DefaultTimeoutStartSec=5s/g' /etc/systemd/system.conf
-sed -i 's/#DefaultTimeoutStopSec=90s/DefaultTimeoutStopSec=5s/g' /etc/systemd/system.conf
-
-mkdir -p /etc/systemd/system/networking.service.d/
-bash -c 'echo -e "[Service]\nTimeoutStartSec=20sec" > /etc/systemd/system/networking.service.d/timeout.conf'
-
-systemctl mask avahi-daemon.service
-systemctl disable cupsd.service cupsd-browsed.service NetworkManager-wait-online.service keyboard-setup.service
-
-sed -i 's/ACTION!="add", GOTO="libmtp_rules_end"/ACTION!="bind", ACTION!="add", GOTO="libmtp_rules_end"/g' /lib/udev/rules.d/69-libmtp.rules
-
-
-#	add support for AppImages and add AppImages.
+#	add support for AppImages.
 
 echo -e "PATH=$PATH:/Applications\n" >> /etc/environment
 sed -i "s|secure_path\=.*$|secure_path=\"$PATH:/Applications\"|g" /etc/sudoers
 sed -i "/env_reset/d" /etc/sudoers
-
-
-#	let krohnkite be configured from system settings.
-
-ln -sv /usr/share/kwin/scripts/krohnkite/metadata.desktop /usr/share/kservices5/krohnkite.desktop
 
 
 #	use mksh and zsh in userland.
@@ -69,10 +42,3 @@ sed -i 's+DSHELL=/bin/bash+DSHELL=/bin/zsh+g' /etc/adduser.conf
 
 echo -e "XDG_CONFIG_DIRS=/etc/xdg" >> /etc/environment
 echo -e "XDG_DATA_DIRS=/usr/local/share:/usr/share" >> /etc/environment
-
-
-#	force set nitrux_cursors as the default x-curosr-theme
-
-cp /usr/share/icons/nitrux_snow_cursors/index.theme /etc/X11/cursors/nitrux_cursors.theme
-ln -svf /etc/X11/cursors/nitrux_cursors.theme /etc/alternatives/x-cursor-theme
-sed -i '$ a Inherits=nitrux_snow_cursors' /etc/X11/cursors/nitrux_cursors.theme
