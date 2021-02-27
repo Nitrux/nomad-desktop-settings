@@ -23,7 +23,7 @@ ln -svf /usr/games/nsnake /usr/bin/nsnake
 git clone https://github.com/robbyrussell/oh-my-zsh.git /etc/skel/.oh-my-zsh
 
 
-#	add support for AppImages,
+#	add support for AppImages.
 
 echo -e "PATH=$PATH:/Applications\n" >> /etc/environment
 sed -i "s|secure_path\=.*$|secure_path=\"$PATH:/Applications\"|g" /etc/sudoers
