@@ -1,6 +1,12 @@
+nx-desktop-settings (2.9.4)  nitrux; urgency=medium
+
+  * Update postinst.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sun, 28 Feb 2021 05:30:00 -0500
+
 nx-desktop-settings (2.9.3)  nitrux; urgency=medium
 
-  * Fix typo in  session path.
+  * Fix typo in session path.
 
  -- Uri Herrera <uri_herrera@nxos.org>  Sun, 28 Feb 2021 04:37:00 -0500
 

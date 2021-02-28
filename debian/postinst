@@ -112,8 +112,3 @@ mv /etc/skel/Desktop/FAQ.pdf /etc/skel/Desktop/Nitrux\ —\ FAQ.pdf
 cp /usr/share/icons/nitrux_snow_cursors/index.theme /etc/X11/cursors/nitrux_cursors.theme
 ln -svf /etc/X11/cursors/nitrux_cursors.theme /etc/alternatives/x-cursor-theme
 sed -i '$ a Inherits=nitrux_snow_cursors' /etc/X11/cursors/nitrux_cursors.theme
-
-
-#	force sddm to use plasma (wayland) session
-rm /usr/share/xsessions/plasma.desktop
-ln -svf /usr/share/wayland-sessions/plasmawayland.desktop /usr/share/xsessions/plasma.desktop
