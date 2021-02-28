@@ -1,8 +1,14 @@
+nx-desktop-settings (2.9.3)  nitrux; urgency=medium
+
+  * Fix typo in  session path.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sun, 28 Feb 2021 04:37:00 -0500
+
 nx-desktop-settings (2.9.2)  nitrux; urgency=medium
 
   * Tell kwin to run with EGLStreams.
 
- -- Uri Herrera <uri_herrera@nxos.org>  Sun, 28 Feb 2021 00:18:00 -0500
+ -- Uri Herrera <uri_herrera@nxos.org>  Sun, 28 Feb 2021 04:15:00 -0500
 
 nx-desktop-settings (2.9.1)  nitrux; urgency=medium
 

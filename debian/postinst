@@ -116,4 +116,4 @@ sed -i '$ a Inherits=nitrux_snow_cursors' /etc/X11/cursors/nitrux_cursors.theme
 
 #	force sddm to use plasma (wayland) session
 rm /usr/share/xsessions/plasma.desktop
-ln -svf /usr/share/xsessions/plasmawayland.desktop /usr/share/xsessions/plasma.desktop
+ln -svf /usr/share/wayland-sessions/plasmawayland.desktop /usr/share/xsessions/plasma.desktop
