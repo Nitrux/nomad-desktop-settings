@@ -6,6 +6,7 @@ GLCore=true
 GLPreferBufferSwap=p
 OpenGLIsUnsafe=false
 GLTextureFilter=2
+LatencyPolicy=ExtremelyLow 
 HiddenPreviews=5
 OpenGLIsUnsafe=false
 WindowsBlockCompositing=true
@@ -170,9 +171,6 @@ TitlebarDoubleClickCommand=Maximize
 WindowSnapZone=10
 
 [org.kde.kdecoration2]
-BorderSize=Normal
-ButtonsOnLeft=
+library=org.kde.mauideco
 ButtonsOnRight=IAX
-CloseOnDoubleClickOnMenu=false
-library=org.kde.kwin.aurorae
-theme=__aurorae__svg__org.kwin.aurorae.nitrux.dark
+theme=Nitrux
