@@ -30,7 +30,7 @@ Item {
     id: item
 
     width: GridView.view.cellWidth
-    height: GridView.view.cellHeight
+    height: width
 
     property bool showLabel: true
 
@@ -38,7 +38,7 @@ Item {
     readonly property url url: model.url != undefined ? model.url : ""
     property bool pressed: false
     readonly property bool hasActionList: ((model.favoriteId != null)
-                                           || (("hasActionList" in model) && (model.hasActionList == true)))
+        || (("hasActionList" in model) && (model.hasActionList == true)))
 
     Accessible.role: Accessible.MenuItem
     Accessible.name: model.display
@@ -54,25 +54,20 @@ Item {
         Tools.triggerAction(plasmoid, GridView.view.model, model.index, actionId, actionArgument);
     }
 
-    Rectangle{
-        id: box
-        height: parent.height // - 10
-        width:  parent.width  // - 10
-        anchors.verticalCenter: parent.verticalCenter
-        anchors.horizontalCenter: parent.horizontalCenter
-        //color:"red"
-        //opacity: 0.4
-        color:"transparent"
-    }
     PlasmaCore.IconItem {
         id: icon
-        y: iconSize*0.2
-        anchors.horizontalCenter: box.horizontalCenter
-        //anchors.verticalCenter:   box.verticalCenter
+
+        y: showLabel ? (2 * highlightItemSvg.margins.top) : 0
+
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: showLabel ? undefined : parent.verticalCenter
+
         width: iconSize
         height: width
+
         animated: false
         usesPlasmaTheme: item.GridView.view.usesPlasmaTheme
+
         source: model.decoration
     }
 
@@ -84,9 +79,9 @@ Item {
         anchors {
             top: icon.bottom
             topMargin: units.smallSpacing
-            left: box.left
+            left: parent.left
             leftMargin: highlightItemSvg.margins.left
-            right: box.right
+            right: parent.right
             rightMargin: highlightItemSvg.margins.right
         }
 
@@ -105,8 +100,12 @@ Item {
         } else if ((event.key == Qt.Key_Enter || event.key == Qt.Key_Return)) {
             event.accepted = true;
             GridView.view.model.trigger(index, "", null);
-            root.toggle();
 
+            if ("toggle" in root) {
+                root.toggle();
+            } else {
+                root.visible = false;
+            }
         }
     }
 }

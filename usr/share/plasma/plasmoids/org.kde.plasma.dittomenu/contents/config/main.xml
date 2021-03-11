@@ -12,25 +12,6 @@
     <entry name="useCustomButtonImage" type="Bool">
       <default>false</default>
     </entry>
-    <entry name="useCustomSizeGrid" type="Bool">
-      <default>false</default>
-    </entry>
-    <entry name="numberColumns" type="Int">
-      <default>7</default>
-    </entry>
-    <entry name="numberRows" type="Int">
-      <default>5</default>
-    </entry>
-    <entry name="iconSize" type="Int">
-      <default>64</default>
-    </entry>
-    <entry name="spaceWidth" type="Int">
-      <default>32</default>
-    </entry>
-    <entry name="spaceHeight" type="Int">
-      <default>12</default>
-    </entry>
-
     <entry name="customButtonImage" type="Url">
       <default></default>
     </entry>
@@ -45,8 +26,17 @@
     <entry name="limitDepth" type="Bool">
       <default>false</default>
     </entry>
+
+    <entry name="numberColumns" type="Int">
+    <default>6</default>
+    </entry>
+
+    <entry name="numberRows" type="Int">
+    <default>4</default>
+    </entry>
+
     <entry name="favoriteApps" type="StringList">
-      <default></default>
+      <default>preferred://browser,kontact.desktop,systemsettings.desktop,org.kde.dolphin.desktop,ktp-contactlist.desktop,org.kde.kate.desktop</default>
     </entry>
     <entry name="favoriteSystemActions" type="StringList">
       <default>logout,lock-screen,reboot,shutdown</default>
@@ -54,8 +44,9 @@
     <entry name="hiddenApplications" type="StringList">
       <default></default>
     </entry>
+
     <entry name="useExtraRunners" type="Bool">
-      <default>false</default>
+      <default>true</default>
     </entry>
     <entry name="extraRunners" type="StringList">
       <default>bookmarks,baloosearch</default>
@@ -65,12 +56,20 @@
     </entry>
     <entry name="switchCategoriesOnHover" type="Bool">
       <label>Whether to switch between menu categories by hovering them.</label>
-      <default>false</default>
+      <default>true</default>
     </entry>
 
     <entry name="removeApplicationCommand" type="String">
       <default>muon-discover --application</default>
     </entry>
+
+    <entry name="showAtCenter" type="Bool">
+       <default>true</default>
+   </entry>
+
+    <entry name="showFavoritesFirst" type="Bool">
+       <default>false</default>
+   </entry>
 
     <entry name="favoritesPortedToKAstats" type="Bool">
       <label>Are the favorites ported to use KActivitiesStats to allow per-activity favorites</label>

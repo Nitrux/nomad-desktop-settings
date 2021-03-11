@@ -71,6 +71,8 @@ Item {
         appletInterface: plasmoid
 
         paginate: true
+        pageSize: plasmoid.configuration.numberColumns *  plasmoid.configuration.numberRows
+
         showAllApps: true
         showRecentApps: false
         showRecentDocs: false
@@ -93,21 +95,23 @@ Item {
         }
 
         onSystemFavoritesModelChanged: {
-           systemFavoritesModel.enabled = false;
-           systemFavoritesModel.favorites = plasmoid.configuration.favoriteSystemActions;
-           systemFavoritesModel.maxFavorites = 8;
+            systemFavoritesModel.enabled = false;
+            systemFavoritesModel.favorites = plasmoid.configuration.favoriteSystemActions;
+            systemFavoritesModel.maxFavorites = 8;
         }
 
         Component.onCompleted: {
             if ("initForClient" in favoritesModel) {
-               favoritesModel.initForClient("org.kde.plasma.kicker.favorites.instance-" + plasmoid.id)
-               if (!plasmoid.configuration.favoritesPortedToKAstats) {
-                   favoritesModel.portOldFavorites(plasmoid.configuration.favoriteApps);
-                   plasmoid.configuration.favoritesPortedToKAstats = true;
-               }
+                favoritesModel.initForClient("org.kde.plasma.kicker.favorites.instance-" + plasmoid.id)
+
+                if (!plasmoid.configuration.favoritesPortedToKAstats) {
+                    favoritesModel.portOldFavorites(plasmoid.configuration.favoriteApps);
+                    plasmoid.configuration.favoritesPortedToKAstats = true;
+                }
             } else {
-               favoritesModel.favorites = plasmoid.configuration.favoriteApps;
+                favoritesModel.favorites = plasmoid.configuration.favoriteApps;
             }
+
             favoritesModel.maxFavorites = pageSize;
             rootModel.refresh();
         }
@@ -117,7 +121,7 @@ Item {
         target: globalFavorites
 
         onFavoritesChanged: {
-           plasmoid.configuration.favoriteApps = target.favorites;
+            plasmoid.configuration.favoriteApps = target.favorites;
         }
     }
 
@@ -125,7 +129,7 @@ Item {
         target: systemFavorites
 
         onFavoritesChanged: {
-           plasmoid.configuration.favoriteSystemActions = target.favorites;
+            plasmoid.configuration.favoriteSystemActions = target.favorites;
         }
     }
 
@@ -143,10 +147,14 @@ Item {
 
     Kicker.RunnerModel {
         id: runnerModel
-        favoritesModel: globalFavorites
-        runners: plasmoid.configuration.useExtraRunners ? new Array("services").concat(plasmoid.configuration.extraRunners) : "services"
+
         appletInterface: plasmoid
+        favoritesModel: globalFavorites
         deleteWhenEmpty: false
+
+        mergeResults: true
+        runners: plasmoid.configuration.useExtraRunners ? new Array("services").concat(plasmoid.configuration.extraRunners) : "services"
+        
     }
 
     Kicker.DragHelper {
@@ -191,7 +199,9 @@ Item {
 
     Component.onCompleted: {
         plasmoid.setAction("menuedit", i18n("Edit Applications..."));
+
         rootModel.refreshed.connect(reset);
+
         dragHelper.dropped.connect(resetDragSource);
     }
 }

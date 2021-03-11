@@ -100,16 +100,14 @@ Item {
         hoverEnabled: true
 
         onClicked: {
-            //<>dashWindow.visible = !dashWindow.visible;
-            dashWindow.toggle()
+            dashWindow.visible = !dashWindow.visible;
         }
     }
 
     Component.onCompleted: {
         dashWindow = Qt.createQmlObject("MenuRepresentation {}", root);
         plasmoid.activated.connect(function() {
-            //<>dashWindow.visible = !dashWindow.visible;
-            dashWindow.toggle()
+            dashWindow.visible = !dashWindow.visible;
         });
     }
 }

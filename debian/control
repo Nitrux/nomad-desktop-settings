@@ -1,4 +1,4 @@
-Source: nx-desktop-settings
+Source: nx-desktop-settings-arm64
 Section: misc
 Priority: optional
 Maintainer: Uri Herrera <uri_herrera@nxos.org>
@@ -7,10 +7,10 @@ Standards-Version: 3.9.6
 Homepage: http://nx-desktop.org
 
 
-Package: nx-desktop-settings
-Architecture: any
+Package: nx-desktop-settings-arm64
+Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Conflicts: nx-desktop-settings-legacy
+Conflicts: nx-desktop-settings, nx-desktop-settings-legacy, nx-desktop-settings-minimal, nx-desktop-settings-legacy-minimal
 Description: Defaults settings for NX Desktop
  Default settings for:
   - KDE Plasma

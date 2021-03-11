@@ -40,13 +40,15 @@ Item {
     property bool cfg_useCustomButtonImage: plasmoid.configuration.useCustomButtonImage
     property string cfg_customButtonImage: plasmoid.configuration.customButtonImage
 
+    property alias cfg_appNameFormat: appNameFormat.currentIndex
+    //property alias cfg_switchCategoriesOnHover: switchCategoriesOnHover.checked
 
-    property alias cfg_useCustomSizeGrid: useCustomSizeGrid.checked
-    property alias cfg_iconSize:      iconSize.value
+    property alias cfg_useExtraRunners: useExtraRunners.checked
+
     property alias cfg_numberColumns: numberColumns.value
-    property alias cfg_numberRows:    numberRows.value
-    property alias cfg_spaceWidth:    spaceWidth.value
-    property alias cfg_spaceHeight:   spaceHeight.value
+    property alias cfg_numberRows: numberRows.value
+    property alias cfg_showAtCenter: showAtCenter.checked
+    property alias cfg_showFavoritesFirst: showFavoritesFirst.checked
 
     ColumnLayout {
         anchors.left: parent.left
@@ -156,92 +158,103 @@ Item {
             }
         }
 
-        RowLayout{
+        GroupBox {
             Layout.fillWidth: true
-            Label {
-                Layout.leftMargin: units.smallSpacing
-                text: i18n("Size of icons")
-            }
-            SpinBox{
-                id: iconSize
-                minimumValue: 24
-                maximumValue: 256
-                stepSize: 4
-            }
-        }
 
-        RowLayout{
+            title: i18n("Behavior")
+
+            flat: true
+
             ColumnLayout {
-                RowLayout{
-                    Layout.fillWidth: true
-                    SpinBox{
-                        id: spaceWidth
-                        minimumValue: 10
-                        maximumValue: 128
-                        stepSize: 4
-                    }
+                RowLayout {
                     Label {
-                        Layout.leftMargin: units.smallSpacing
-                        text: i18n("Space between columns")
+                        text: i18n("Show applications as:")
                     }
-                }
 
-                RowLayout{
-                    Layout.fillWidth: true
-                    // /flat: true
-                    SpinBox{
-                        id: spaceHeight
-                        minimumValue: 10
-                        maximumValue: 128
-                        stepSize: 4
-                    }
-                    Label {
-                        Layout.leftMargin: units.smallSpacing
-                        text: i18n("Space between rows")
+                    ComboBox {
+                        id: appNameFormat
+
+                        Layout.fillWidth: true
+
+                        model: [i18n("Name only"), i18n("Description only"), i18n("Name (Description)"), i18n("Description (Name)")]
                     }
                 }
+                CheckBox {
+                    id: showFavoritesFirst
+                    text: i18n("Show favorites first")
+                }
+                CheckBox {
+                    id: showAtCenter
+                    text: i18n("Position launcher at the center of the screen")
+                }
+                // CheckBox {
+                //     id: switchCategoriesOnHover
+                //     text: i18n("Switch categories on hover")
+                // }
             }
         }
 
-        RowLayout{
-            spacing: units.smallSpacing
-            CheckBox{
-                id: useCustomSizeGrid
-                text:  "Enable custom grid"
+        GroupBox {
+            Layout.fillWidth: true
+            title: i18n("Search")
+            flat: true
+            ColumnLayout {
+                CheckBox {
+                    id: useExtraRunners
+                    text: i18n("Expand search to bookmarks, files and emails")
+                }
             }
-
         }
+        
+
         GroupBox {
             title: i18n("Grid")
             flat: true
-            enabled: useCustomSizeGrid.checked
             ColumnLayout {
                 RowLayout{
                     Layout.fillWidth: true
+
+                    // /flat: true
+
                     SpinBox{
                         id: numberColumns
                         minimumValue: 4
-                        maximumValue: 20
+                        maximumValue: 10
                     }
                     Label {
                         Layout.leftMargin: units.smallSpacing
-                        text: i18n("Number of columns")
+                        text: i18n("Number of columns in grid")
                     }
                 }
 
                 RowLayout{
                     Layout.fillWidth: true
+
+                    // /flat: true
+
                     SpinBox{
                         id: numberRows
-                        minimumValue: 4
-                        maximumValue: 20
+                        minimumValue: 1
+                        maximumValue: 10
                     }
                     Label {
                         Layout.leftMargin: units.smallSpacing
-                        text: i18n("Number of rows")
+                        text: i18n("Number of rows in grid")
                     }
                 }
             }
         }
     }
 }
+//SpinBox{
+//                    id: iconSizeSpn
+//                    minimumValue: 16
+//                    maximumValue: 128
+//                    suffix: " " + i18nc("pixels","px.")
+//                    enabled: !iconFillChk.checked
+//                }
+//
+//                Label {
+//                    Layout.leftMargin: units.smallSpacing
+//                    text: "maximum"
+//                }
