@@ -309,8 +309,12 @@ def init_rofi():
     info_fg_color = rgba_to_hex(style_context.lookup_color('info_fg_color')[1])
     # text_color = rgba_to_hex(style_context.lookup_color('theme_text_color')[1])
 
-    kdeglobals = KdeGlobalsConfig()
-    icon_theme = kdeglobals.get('Icons', 'Theme', fallback='breeze')
+    try:
+        kdeglobals = KdeGlobalsConfig()
+        icon_theme = kdeglobals.get('Icons', 'Theme', fallback='breeze')
+    except configparser.Error as e:
+        logging.exception('Could not read Icon Theme from ~/.config/kdeglobals')
+        icon_theme = 'breeze'
 
     def logTheme():
         logging.debug('bg_color: %s', str(bg_color))
