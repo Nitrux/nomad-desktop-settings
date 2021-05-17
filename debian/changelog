@@ -1,3 +1,9 @@
+nx-desktop-settings (3.0.0)  nitrux; urgency=medium
+
+  * Change dir with LO settings.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 17 May 2021 16:22:00 -0500
+
 nx-desktop-settings (2.9.9)  nitrux; urgency=medium
 
   * Change dir with LO settings.
