@@ -1,3 +1,9 @@
+nx-desktop-settings-legacy-minimal (0.0.4)  nitrux; urgency=medium
+
+  * Update package.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Tue, 25 Mar 2021 19:10:00 -0500
+
 nx-desktop-settings-legacy-minimal (0.0.3)  nitrux; urgency=medium
 
   * Update package.
