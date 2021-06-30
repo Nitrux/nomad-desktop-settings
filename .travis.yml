@@ -9,9 +9,8 @@ script:
 
 branches:
   only:
-  - master
-  - legacy
-  
+    - master
+
 deploy:
   - provider: script
     script: wget -qO - https://raw.githubusercontent.com/Nitrux/nitrux-repository-util/master/upload-pkgs | sh -s *.deb
@@ -21,3 +20,4 @@ deploy:
 
 notifications:
   email: false
+  
