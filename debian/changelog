@@ -1,8 +1,14 @@
+nx-desktop-settings-arm64 (0.0.3)  nitrux; urgency=medium
+
+  * Update package.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 09 Mar 2021 20:56:00 -0500
+
 nx-desktop-settings-arm64 (0.0.2)  nitrux; urgency=medium
 
   * Update package.
 
- -- Uri Herrera <uri_herrera@nxos.org>  Fri, 09 Mar 2021 21:00:00 -0500
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 09 Mar 2021 17:33:00 -0500
 
 nx-desktop-settings-arm64 (0.0.1)  nitrux; urgency=medium
 
